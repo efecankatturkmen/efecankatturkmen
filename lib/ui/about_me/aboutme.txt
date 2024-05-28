@@ -1,0 +1,28 @@
+About Me
+I am an experienced member of the ITS Innovation and Enterprise Applications teams at Binghamton University, specializing in technology solutions and support. My role involves collaborating closely with other team members on a wide range of projects, often working independently or as part of a larger team. Here is an overview of my responsibilities and contributions:
+
+General Duties & Responsibilities
+Customer Service: Provide timely and courteous support by responding to TDX tickets, emails, phone calls, and voicemails within two business days. Attend pre-scheduled meetings promptly.
+Professionalism: Maintain a professional work environment and consult with users to determine their technology needs, offering recommendations based on ITS services, standards, or industry best practices.
+Continual Learning: Stay current on industry best practices through reviewing publications, requesting training, and attending industry meetings.
+Standards & Practices: Follow ITS standards or industry best practices for configuring and setting up hardware, software, or applications.
+Documentation & Response: Use TDX to document and respond to incidents, problems, and requests, prioritizing based on urgency and order received.
+Change Management: Follow change management procedures, including announcing planned changes at daily stand-up meetings and reading meeting notes.
+Communication: Utilize Binghamton University Email and Calendar System for communication and schedule management.
+Feedback & Meetings: Provide feedback on ITS services and participate in ITS, Innovation Team, and individual team meetings.
+Specific Responsibilities & Projects
+BMobi Application: Support and develop the Binghamton University "bMobi" application, including the CAS 2FA "Push" Authentication feature.
+Web-Based Applications: Develop and support various web-based micro-applications and web services, such as:
+Decker Inventory System (Product Search, Expiration List, Checkout, Requested Items)
+UUP Performance Programs and Evaluations (ProgEval)
+BingSwap
+ID Card Photo Upload
+Large Web-Based Systems: Contribute to components and modules of large web-based systems, including:
+BComply training and compliance web application
+Workshop Management, Reporting & Calendaring
+BComply ID Card Logins
+Workflows: Develop and support workflows, such as Purchasing Contract Workflow, various Research Foundation HR Workflows, and Graduate Late Add/Drop Workflow.
+Documentation: Document business processes and requirements, along with related software development duties.
+For specific, measurable duties and responsibilities, please reference the "Short Term Objectives" section of my performance program.
+
+Through my role, I strive to ensure that Binghamton University's technology needs are met efficiently and professionally, continually improving services and processes to enhance the user experience.

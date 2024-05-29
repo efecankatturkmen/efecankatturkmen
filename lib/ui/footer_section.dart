@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class FooterSection extends StatelessWidget {
   @override
@@ -8,8 +9,8 @@ class FooterSection extends StatelessWidget {
       padding: const EdgeInsets.all(20.0),
       child: Column(
         children: <Widget>[
-          Image.asset(
-            'lib/assets/ect_logo.jpg',
+          SvgPicture.asset(
+            'lib/assets/ect_logo.svg',
             fit: BoxFit.fitWidth,
             width: 100,
           ),

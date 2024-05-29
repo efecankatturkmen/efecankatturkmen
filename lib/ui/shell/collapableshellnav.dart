@@ -1,6 +1,7 @@
 import 'package:efecankatturkmen/ui/footer_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -87,8 +88,8 @@ class CollapsibleAppBarScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset(
-                    'lib/assets/ect_logo.jpg',
+                  SvgPicture.asset(
+                    'lib/assets/ect_logo.svg',
                     fit: BoxFit.fitWidth,
                     width: 40,
                   ),

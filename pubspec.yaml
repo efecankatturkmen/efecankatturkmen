@@ -74,6 +74,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - lib/assets/ect_logo.jpg
+    - lib/assets/ect_logo.svg
     - lib/assets/Bgimage1.png
     - lib/assets/profile_photo.png  
 

@@ -15,9 +15,9 @@ class _LandingpageWidgetState extends State<LandingpageWidget> {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     return Center(
-      child: Column(
+      child: ListView(
+        shrinkWrap: true,
         children: [
-          Text('Home'),
           Divider(
             height: 50,
             color: Colors.transparent,

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_flip_card/flutter_flip_card.dart';
 
 class AboutWidget extends StatelessWidget {
   @override
@@ -7,7 +9,7 @@ class AboutWidget extends StatelessWidget {
     final screenHeight = MediaQuery.of(context).size.height;
     final isMobile = screenWidth < 600;
     final isTablet = screenWidth >= 600 && screenWidth < 1024;
-
+    final controller = FlipCardController();
     final double imageWidth = isMobile
         ? screenWidth * 0.85
         : isTablet
@@ -25,53 +27,85 @@ class AboutWidget extends StatelessWidget {
           ? Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Container(
-                  width: imageWidth / 2,
-                  height: imageHeight / 2,
-                  child: Stack(
-                    children: <Widget>[
-                      Positioned(
-                        top: isMobile ? 26 : 26,
-                        left: isMobile ? 27 : 27,
-                        child: Container(
-                          width: imageWidth / 2,
-                          height: imageHeight / 2,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(isMobile ? 24 : 24),
-                              topRight: Radius.circular(0),
-                              bottomLeft: Radius.circular(0),
-                              bottomRight: Radius.circular(isMobile ? 24 : 24),
-                            ),
-                            color: Color.fromRGBO(217, 217, 217, 1),
-                            border: Border.all(
-                              color: Color.fromRGBO(255, 255, 255, 1),
-                              width: 2,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        top: 0,
-                        left: 0,
-                        child: Container(
-                          width: imageWidth / 2 - 20,
-                          height: imageHeight / 2 - 20,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(isMobile ? 24 : 24),
-                              topRight: Radius.circular(0),
-                              bottomLeft: Radius.circular(0),
-                              bottomRight: Radius.circular(isMobile ? 24 : 24),
-                            ),
-                            image: DecorationImage(
-                              image: AssetImage('lib/assets/ect_logo.jpg'),
-                              fit: BoxFit.cover,
+                InkWell(
+                  onHover: (onHover) {
+                    controller.flipcard();
+                  },
+                  onTap: () {
+                    controller.flipcard();
+                  },
+                  child: Container(
+                    width: imageWidth / 2,
+                    height: imageHeight / 2,
+                    child: Stack(
+                      children: <Widget>[
+                        Positioned(
+                          top: isMobile ? 26 : 26,
+                          left: isMobile ? 27 : 27,
+                          child: Container(
+                            width: imageWidth / 2,
+                            height: imageHeight / 2,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(isMobile ? 24 : 24),
+                                topRight: Radius.circular(0),
+                                bottomLeft: Radius.circular(0),
+                                bottomRight:
+                                    Radius.circular(isMobile ? 24 : 24),
+                              ),
+                              color: Color.fromRGBO(217, 217, 217, 1),
+                              border: Border.all(
+                                color: Color.fromRGBO(255, 255, 255, 1),
+                                width: 2,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                        Positioned(
+                          top: 0,
+                          left: 0,
+                          child: FlipCard(
+                            controller: controller,
+                            rotateSide: RotateSide.top,
+                            frontWidget: Container(
+                              width: imageWidth / 2 - 20,
+                              height: imageHeight / 2 - 20,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(isMobile ? 24 : 24),
+                                  topRight: Radius.circular(0),
+                                  bottomLeft: Radius.circular(0),
+                                  bottomRight:
+                                      Radius.circular(isMobile ? 24 : 24),
+                                ),
+                                image: DecorationImage(
+                                  image: AssetImage('lib/assets/ect_logo.jpg'),
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                            backWidget: Container(
+                              width: imageWidth / 2 - 20,
+                              height: imageHeight / 2 - 20,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(isMobile ? 24 : 24),
+                                  topRight: Radius.circular(0),
+                                  bottomLeft: Radius.circular(0),
+                                  bottomRight:
+                                      Radius.circular(isMobile ? 24 : 24),
+                                ),
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                      'lib/assets/profile_photo.png'),
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(height: isMobile ? 20 : 20),
@@ -121,53 +155,82 @@ class AboutWidget extends StatelessWidget {
           : Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                Container(
-                  width: imageWidth,
-                  height: imageHeight,
-                  child: Stack(
-                    children: <Widget>[
-                      Positioned(
-                        top: 26,
-                        left: 27,
-                        child: Container(
-                          width: imageWidth,
-                          height: imageHeight,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(24),
-                              topRight: Radius.circular(0),
-                              bottomLeft: Radius.circular(0),
-                              bottomRight: Radius.circular(24),
-                            ),
-                            color: Color.fromRGBO(217, 217, 217, 1),
-                            border: Border.all(
-                              color: Color.fromRGBO(255, 255, 255, 1),
-                              width: 2,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        top: 0,
-                        left: 0,
-                        child: Container(
-                          width: imageWidth - 20,
-                          height: imageHeight - 20,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(24),
-                              topRight: Radius.circular(0),
-                              bottomLeft: Radius.circular(0),
-                              bottomRight: Radius.circular(24),
-                            ),
-                            image: DecorationImage(
-                              image: AssetImage('lib/assets/ect_logo.jpg'),
-                              fit: BoxFit.cover,
+                InkWell(
+                  onHover: (onHover) {
+                    controller.flipcard();
+                  },
+                  onTap: () {
+                    controller.flipcard();
+                  },
+                  child: Container(
+                    width: imageWidth,
+                    height: imageHeight,
+                    child: Stack(
+                      children: <Widget>[
+                        Positioned(
+                          top: 26,
+                          left: 27,
+                          child: Container(
+                            width: imageWidth,
+                            height: imageHeight,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(24),
+                                topRight: Radius.circular(0),
+                                bottomLeft: Radius.circular(0),
+                                bottomRight: Radius.circular(24),
+                              ),
+                              color: Color.fromRGBO(217, 217, 217, 1),
+                              border: Border.all(
+                                color: Color.fromRGBO(255, 255, 255, 1),
+                                width: 2,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                        Positioned(
+                          top: 0,
+                          left: 0,
+                          child: FlipCard(
+                            controller: controller,
+                            rotateSide: RotateSide.top,
+                            frontWidget: Container(
+                              width: imageWidth - 20,
+                              height: imageHeight - 20,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(24),
+                                  topRight: Radius.circular(0),
+                                  bottomLeft: Radius.circular(0),
+                                  bottomRight: Radius.circular(24),
+                                ),
+                                image: DecorationImage(
+                                  image: AssetImage('lib/assets/ect_logo.jpg'),
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                            backWidget: Container(
+                              width: imageWidth - 20,
+                              height: imageHeight - 20,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(24),
+                                  topRight: Radius.circular(0),
+                                  bottomLeft: Radius.circular(0),
+                                  bottomRight: Radius.circular(24),
+                                ),
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                      'lib/assets/profile_photo.png'),
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Positioned(

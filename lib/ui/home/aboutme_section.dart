@@ -167,12 +167,29 @@ class AboutWidget extends StatelessWidget {
                     height: imageHeight,
                     child: Stack(
                       children: <Widget>[
-                        Positioned(
-                          top: 26,
-                          left: 27,
-                          child: Container(
-                            width: imageWidth,
-                            height: imageHeight,
+                        Container(
+                          width: imageWidth,
+                          height: imageHeight,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(24),
+                              topRight: Radius.circular(0),
+                              bottomLeft: Radius.circular(0),
+                              bottomRight: Radius.circular(24),
+                            ),
+                            color: Color.fromRGBO(217, 217, 217, 1),
+                            border: Border.all(
+                              color: Color.fromRGBO(255, 255, 255, 1),
+                              width: 2,
+                            ),
+                          ),
+                        ),
+                        FlipCard(
+                          controller: controller,
+                          rotateSide: RotateSide.top,
+                          frontWidget: Container(
+                            width: imageWidth - 20,
+                            height: imageHeight - 20,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(24),
@@ -180,51 +197,26 @@ class AboutWidget extends StatelessWidget {
                                 bottomLeft: Radius.circular(0),
                                 bottomRight: Radius.circular(24),
                               ),
-                              color: Color.fromRGBO(217, 217, 217, 1),
-                              border: Border.all(
-                                color: Color.fromRGBO(255, 255, 255, 1),
-                                width: 2,
+                              image: DecorationImage(
+                                image: AssetImage('lib/assets/ect_logo.jpg'),
+                                fit: BoxFit.cover,
                               ),
                             ),
                           ),
-                        ),
-                        Positioned(
-                          top: 0,
-                          left: 0,
-                          child: FlipCard(
-                            controller: controller,
-                            rotateSide: RotateSide.top,
-                            frontWidget: Container(
-                              width: imageWidth - 20,
-                              height: imageHeight - 20,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(24),
-                                  topRight: Radius.circular(0),
-                                  bottomLeft: Radius.circular(0),
-                                  bottomRight: Radius.circular(24),
-                                ),
-                                image: DecorationImage(
-                                  image: AssetImage('lib/assets/ect_logo.jpg'),
-                                  fit: BoxFit.cover,
-                                ),
+                          backWidget: Container(
+                            width: imageWidth - 20,
+                            height: imageHeight - 20,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(24),
+                                topRight: Radius.circular(0),
+                                bottomLeft: Radius.circular(0),
+                                bottomRight: Radius.circular(24),
                               ),
-                            ),
-                            backWidget: Container(
-                              width: imageWidth - 20,
-                              height: imageHeight - 20,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(24),
-                                  topRight: Radius.circular(0),
-                                  bottomLeft: Radius.circular(0),
-                                  bottomRight: Radius.circular(24),
-                                ),
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                      'lib/assets/profile_photo.png'),
-                                  fit: BoxFit.cover,
-                                ),
+                              image: DecorationImage(
+                                image:
+                                    AssetImage('lib/assets/profile_photo.png'),
+                                fit: BoxFit.cover,
                               ),
                             ),
                           ),
@@ -233,46 +225,42 @@ class AboutWidget extends StatelessWidget {
                     ),
                   ),
                 ),
-                Positioned(
-                  top: 21,
-                  left: 600,
-                  child: Container(
-                    width: 580,
-                    height: 366,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          'ABOUT ME',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.red,
-                            fontSize: 24,
-                            fontWeight: FontWeight.normal,
-                          ),
+                Container(
+                  width: 580,
+                  height: 366,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        'ABOUT ME',
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                          color: Colors.red,
+                          fontSize: 24,
+                          fontWeight: FontWeight.normal,
                         ),
-                        SizedBox(height: 20),
-                        Text(
-                          'I’m Efe Cankat Turkmen',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Color.fromRGBO(255, 255, 255, 1),
-                            fontSize: 36,
-                            fontWeight: FontWeight.normal,
-                          ),
+                      ),
+                      SizedBox(height: 20),
+                      Text(
+                        'I’m Efe Cankat Turkmen',
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                          color: Color.fromRGBO(255, 255, 255, 1),
+                          fontSize: 36,
+                          fontWeight: FontWeight.normal,
                         ),
-                        SizedBox(height: 20),
-                        Text(
-                          'I am an experienced member of the ITS Innovation and Enterprise Applications teams at Binghamton University, specializing in technology solutions and support. My role involves collaborating closely with other team members on a wide range of projects, often working independently or as part of a larger team.',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Color.fromRGBO(176, 173, 173, 1),
-                            fontSize: 18,
-                            fontWeight: FontWeight.normal,
-                          ),
+                      ),
+                      SizedBox(height: 20),
+                      Text(
+                        'I am an experienced member of the ITS Innovation and Enterprise Applications teams at Binghamton University, specializing in technology solutions and support. My role involves collaborating closely with other team members on a wide range of projects, often working independently or as part of a larger team.',
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                          color: Color.fromRGBO(176, 173, 173, 1),
+                          fontSize: 18,
+                          fontWeight: FontWeight.normal,
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ],

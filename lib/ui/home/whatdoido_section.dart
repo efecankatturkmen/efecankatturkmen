@@ -141,18 +141,18 @@ class ServiceWidget extends StatelessWidget {
         children: [
           Row(
             children: [
-              Container(
-                width: 42,
-                height: 42,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(imagePath),
-                    fit: BoxFit.cover,
-                  ),
-                  borderRadius: BorderRadius.circular(8),
-                  color: Color.fromRGBO(56, 64, 90, 1),
-                ),
-              ),
+              // Container(
+              //   width: 42,
+              //   height: 42,
+              //   decoration: BoxDecoration(
+              //     image: DecorationImage(
+              //       image: AssetImage(imagePath),
+              //       fit: BoxFit.cover,
+              //     ),
+              //     borderRadius: BorderRadius.circular(8),
+              //     color: Color.fromRGBO(56, 64, 90, 1),
+              //   ),
+              // ),
               SizedBox(width: 20),
               Expanded(
                 child: Text(

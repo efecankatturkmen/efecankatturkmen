@@ -7,8 +7,9 @@ part 'projects_provider.g.dart';
 
 FirebaseFirestore db = FirebaseFirestore.instance;
 @riverpod
-Future<List<Project>> fetchProjects(FetchProjectsRef ref) async {
-  List<Project> allProjects = [];
+Future<List<QueryDocumentSnapshot<Project>>> fetchProjects(
+    FetchProjectsRef ref) async {
+  List<QueryDocumentSnapshot<Project>> allProjects = [];
   await db
       .collection('projects')
       .withConverter(
@@ -16,7 +17,7 @@ Future<List<Project>> fetchProjects(FetchProjectsRef ref) async {
           toFirestore: (Project project, _) => project.toMap())
       .get()
       .then((value) {
-    var x = value;
+    allProjects = value.docs;
   });
 
   return allProjects;

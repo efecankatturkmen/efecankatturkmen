@@ -20,7 +20,6 @@ class Project {
   final String? imageUrl;
   final String? description;
   final bool? isActive;
-  final List<String>? languages;
   final DateTime? start_date;
   final DateTime? end_date;
   final DocumentSnapshot? snapshot;
@@ -34,7 +33,6 @@ class Project {
     this.imageUrl,
     this.description,
     this.isActive,
-    this.languages,
     this.start_date,
     this.end_date,
     this.snapshot,
@@ -49,19 +47,14 @@ class Project {
     var map = snapshot.data();
 
     return Project(
-      label: map?['label'] ?? null,
-      githubUrl: map?['githubUrl'] ?? null,
-      websitebUrl: map?['websitebUrl'] ?? null,
-      imageUrl: map?['imageUrl'] ?? null,
-      description: map?['description'] ?? null,
-      isActive: map?['isActive'] ?? false,
-      languages: (map?['languages'] as List<dynamic>?)?.cast<String>(),
-      start_date: map?['start_date'] != null
-          ? (map?['start_date'] as Timestamp).toDate()
-          : null,
-      end_date: map?['end_date'] != null
-          ? (map?['end_date'] as Timestamp).toDate()
-          : null,
+      label: map?['label'] != null ? (map?['label']) : null,
+      githubUrl: map?['label'] != null ? (map?['label']) : null,
+      websitebUrl: map?['label'] != null ? (map?['label']) : null,
+      imageUrl: map?['label'] != null ? (map?['label']) : null,
+      description: map?['label'] != null ? (map?['label']) : null,
+      isActive: map?['label'] != null ? (map?['label']) : false,
+      start_date: map?['label'] != null ? (map?['label']) : null,
+      end_date: map?['label'] != null ? (map?['label']) : null,
       snapshot: snapshot,
       reference: snapshot.reference,
       documentID: snapshot.id,
@@ -81,7 +74,6 @@ class Project {
         'githubUrl': githubUrl,
         'websitebUrl': websitebUrl,
         'imageUrl': imageUrl,
-        'languages': languages,
         'description': description,
         'isActive': isActive,
         'start_date': start_date,
@@ -95,7 +87,6 @@ class Project {
     String? imageUrl,
     String? description,
     bool? isActive,
-    List<String>? languages,
     DateTime? start_date,
     DateTime? end_date,
   }) {
@@ -106,7 +97,6 @@ class Project {
       imageUrl: imageUrl ?? this.imageUrl,
       description: description ?? this.description,
       isActive: isActive ?? this.isActive,
-      languages: languages ?? this.languages,
       start_date: start_date ?? this.start_date,
       end_date: end_date ?? this.end_date,
     );

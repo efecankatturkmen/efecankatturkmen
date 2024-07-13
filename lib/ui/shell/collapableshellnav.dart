@@ -47,7 +47,9 @@ class CollapsibleAppBarScreen extends StatelessWidget {
                             Text(
                               "I'm Efe Cankat Turkmen",
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 30),
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 30),
                             ),
                             SizedBox(
                               height: 20,
@@ -55,7 +57,9 @@ class CollapsibleAppBarScreen extends StatelessWidget {
                             Text(
                               "Front-End Web & Mobile Development",
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 10),
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 10),
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,

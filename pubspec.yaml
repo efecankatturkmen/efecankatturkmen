@@ -84,6 +84,7 @@ flutter:
     - lib/assets/ect_logo.svg
     - lib/assets/Bgimage1.png
     - lib/assets/profile_photo.png  
+    - lib/assets/specializing/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:js' as js;
 
 class ServiceWidget extends StatelessWidget {
   @override
@@ -62,59 +63,57 @@ class ServiceWidget extends StatelessWidget {
               runSpacing: 10, // gap between lines
               children: <Widget>[
                 _buildServiceCard(
+                    screenWidth: screenWidth,
+                    title: 'Laravel - PHP',
+                    description:
+                        'Laravel is a web application framework with expressive, elegant syntax. We’ve already laid the foundation — freeing you to create without sweating the small things.',
+                    imagePath: 'lib/assets/specializing/laravel.png',
+                    link: "https://laravel.com/"),
+                _buildServiceCard(
+                    screenWidth: screenWidth,
+                    title: 'Flutter - Dart',
+                    description:
+                        'Flutter is a cross-platform UI toolkit that is designed to allow code reuse across operating systems such as iOS and Android, while also allowing applications to interface directly with underlying platform services.',
+                    imagePath: 'lib/assets/specializing/flutter.png',
+                    link: "https://flutter.dev/"),
+                _buildServiceCard(
+                    screenWidth: screenWidth,
+                    title: 'Graphene',
+                    description:
+                        "Graphene is a fully featured Workflow, Micro Application, and Content Management Platform with a robust web-based IDE (Integrated Development Environment). Graphene is the primary engine behind Binghamton University's myBinghamton portal.",
+                    imagePath: 'lib/assets/specializing/graphene.png',
+                    link: "https://www.escherlabs.com/"),
+                _buildServiceCard(
+                    screenWidth: screenWidth,
+                    title: 'Firebase',
+                    description:
+                        'Firebase is a platform developed by Google for building mobile and web applications. It provides a suite of tools and services, including real-time databases, authentication, hosting, and analytics, allowing developers to focus on creating user-friendly applications without managing infrastructure.',
+                    imagePath: 'lib/assets/firebase.png',
+                    link: "https://firebase.google.com/"),
+                _buildServiceCard(
                   screenWidth: screenWidth,
-                  title: 'Front-end Development',
+                  title: 'HTML - CSS',
                   description:
-                      'Lom ipsum dolo, sit amet consectetu adpisiasdasdsadsadsadsadasdasdsadasdsadasdasdasdasdasdsadcing elit, rem voluptas sed blandasdasdasdasdasditiis',
-                  imagePath: 'assets/images/Webdevelopment1.png',
+                      'HTML (HyperText Markup Language) is the standard language for creating and structuring web content. CSS (Cascading Style Sheets) is used to design and format the appearance of HTML elements on web pages.',
+                  imagePath: 'lib/assets/ect_logo.jpg',
                 ),
                 _buildServiceCard(
                   screenWidth: screenWidth,
-                  title: 'UI/UX Designer',
+                  title: 'JS',
                   description:
-                      'Lom ipsum dolo, sit amet consectetu adpisicing elit, rem voluptas sed blanditiis',
-                  imagePath: 'assets/images/Uidesign1.png',
+                      'JavaScript (JS) is a versatile programming language primarily used for enhancing web pages with dynamic behavior and interactivity.',
+                  imagePath: 'lib/assets/ect_logo.jpg',
                 ),
                 _buildServiceCard(
                   screenWidth: screenWidth,
-                  title: 'Front-end Development',
+                  title: 'SQL - NoSQL',
                   description:
-                      'Lom ipsum dolo, sit amet consectetu adpisicing elit, rem voluptas sed blanditiis',
-                  imagePath: 'assets/images/Webdevelopment1.png',
-                ),
-                _buildServiceCard(
-                  screenWidth: screenWidth,
-                  title: 'UI/UX Designer',
-                  description:
-                      'Lom ipsum dolo, sit amet consectetu adpisicing elit, rem voluptas sed blanditiis',
-                  imagePath: 'assets/images/Uidesign1.png',
+                      'SQL (Structured Query Language) is a standardized language for managing and querying relational databases, ensuring efficient storage and retrieval of data. NoSQL (Not only SQL) encompasses various database technologies designed for flexible, scalable, and high-performance storage and retrieval of unstructured or semi-structured data.',
+                  imagePath: 'lib/assets/ect_logo.jpg',
                 ),
               ],
             ),
           ),
-
-          // GridView.builder(
-          //   shrinkWrap: true,
-          //   padding: EdgeInsets.all(10),
-          //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          //     crossAxisCount: isMobile || isTablet ? 1 : 2,
-          //     crossAxisSpacing: 10,
-          //     mainAxisSpacing: 10,
-          //     childAspectRatio:
-          //         (screenWidth / 2) / 200, // Adjust aspect ratio as needed
-          //   ),
-          //   itemCount: services.length,
-          //   itemBuilder: (context, index) {
-          //     final service = services[index];
-
-          //     return _buildServiceCard(
-          //       screenWidth: screenWidth,
-          //       title: service['title']!,
-          //       description: service['description']!,
-          //       imagePath: service['imagePath']!,
-          //     );
-          //   },
-          // ),
         ],
       ),
     );
@@ -125,6 +124,7 @@ class ServiceWidget extends StatelessWidget {
     required String title,
     required String description,
     required String imagePath,
+    String? link,
   }) {
     final double cardWidth =
         (screenWidth / 2) - 20; // Adjust for padding and spacing
@@ -141,18 +141,18 @@ class ServiceWidget extends StatelessWidget {
         children: [
           Row(
             children: [
-              // Container(
-              //   width: 42,
-              //   height: 42,
-              //   decoration: BoxDecoration(
-              //     image: DecorationImage(
-              //       image: AssetImage(imagePath),
-              //       fit: BoxFit.cover,
-              //     ),
-              //     borderRadius: BorderRadius.circular(8),
-              //     color: Color.fromRGBO(56, 64, 90, 1),
-              //   ),
-              // ),
+              Container(
+                width: 42,
+                height: 42,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(imagePath),
+                    fit: BoxFit.contain,
+                  ),
+                  borderRadius: BorderRadius.circular(8),
+                  color: Colors.white,
+                ),
+              ),
               SizedBox(width: 20),
               Expanded(
                 child: Text(
@@ -177,6 +177,13 @@ class ServiceWidget extends StatelessWidget {
               fontWeight: FontWeight.normal,
             ),
           ),
+          link != null
+              ? ElevatedButton(
+                  onPressed: () {
+                    js.context.callMethod('open', [link]);
+                  },
+                  child: Text('Visit'))
+              : SizedBox()
         ],
       ),
     );

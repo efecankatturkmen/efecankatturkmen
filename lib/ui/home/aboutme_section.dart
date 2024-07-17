@@ -53,9 +53,9 @@ class AboutWidget extends StatelessWidget {
                                 bottomRight:
                                     Radius.circular(isMobile ? 24 : 24),
                               ),
-                              color: Color.fromRGBO(217, 217, 217, 1),
+                              color: Color(0xff252526),
                               border: Border.all(
-                                color: Color.fromRGBO(255, 255, 255, 1),
+                                color: Color(0xff252526),
                                 width: 2,
                               ),
                             ),
@@ -177,9 +177,9 @@ class AboutWidget extends StatelessWidget {
                               bottomLeft: Radius.circular(0),
                               bottomRight: Radius.circular(24),
                             ),
-                            color: Color.fromRGBO(217, 217, 217, 1),
+                            color: Color(0xff252526),
                             border: Border.all(
-                              color: Color.fromRGBO(255, 255, 255, 1),
+                              color: Color(0xff252526),
                               width: 2,
                             ),
                           ),

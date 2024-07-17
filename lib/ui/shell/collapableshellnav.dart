@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'dart:js' as js;
 
 class CollapsibleAppBarScreen extends StatelessWidget {
   CollapsibleAppBarScreen({Key? key, required this.child}) : super(key: key);
@@ -65,13 +66,25 @@ class CollapsibleAppBarScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 IconButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      js.context.callMethod('open', [
+                                        "https://www.instagram.com/cankatturkmen"
+                                      ]);
+                                    },
                                     icon: Icon(FontAwesomeIcons.instagram)),
                                 IconButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      js.context.callMethod('open', [
+                                        "https://github.com/efecankatturkmen"
+                                      ]);
+                                    },
                                     icon: Icon(FontAwesomeIcons.github)),
                                 IconButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      js.context.callMethod('open', [
+                                        "https://www.linkedin.com/in/cankat-turkmen/"
+                                      ]);
+                                    },
                                     icon: Icon(FontAwesomeIcons.linkedin))
                               ],
                             ),

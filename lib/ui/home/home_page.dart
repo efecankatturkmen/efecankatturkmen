@@ -14,36 +14,37 @@ class _LandingpageWidgetState extends State<LandingpageWidget> {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    return Center(
-      child: ListView(
-        shrinkWrap: true,
-        children: [
-          Divider(
-            height: 50,
-            color: Colors.transparent,
-          ),
-          AboutWidget(),
-          Divider(
-            height: 50,
-            color: Colors.transparent,
-          ),
-          ServiceWidget(),
-          Divider(
-            height: 50,
-            color: Colors.transparent,
-          ),
-          ProjectsWidget(),
-          Divider(
-            height: 50,
-            color: Colors.transparent,
-          ),
-          ContactWidget(),
-          Divider(
-            height: 50,
-            color: Colors.transparent,
-          ),
-        ],
-      ),
+    return ListView(
+      shrinkWrap: true,
+      children: [
+        Divider(
+          height: 50,
+          color: Colors.transparent,
+        ),
+        AboutWidget(),
+        Divider(
+          height: 50,
+          color: Colors.transparent,
+        ),
+        ServiceWidget(),
+        Divider(
+          height: 50,
+          color: Colors.transparent,
+        ),
+        ProjectsWidget(),
+        Divider(
+          height: 50,
+          color: Colors.transparent,
+        ),
+        Container(
+          child: ContactWidget(),
+          width: 200,
+        ),
+        Divider(
+          height: 50,
+          color: Colors.transparent,
+        ),
+      ],
     );
   }
 }

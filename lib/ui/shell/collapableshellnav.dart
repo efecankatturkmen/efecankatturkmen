@@ -7,14 +7,21 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:js' as js;
 
-class CollapsibleAppBarScreen extends StatelessWidget {
+class CollapsibleAppBarScreen extends StatefulWidget {
+  final ScrollController scrollController;
+
+  Widget child;
   CollapsibleAppBarScreen(
       {Key? key, required this.child, required this.scrollController})
       : super(key: key);
-  Widget child;
-  final ScrollController scrollController;
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
+  @override
+  _CollapsibleAppBarScreenState createState() =>
+      _CollapsibleAppBarScreenState();
+}
+
+class _CollapsibleAppBarScreenState extends State<CollapsibleAppBarScreen> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
@@ -51,7 +58,7 @@ class CollapsibleAppBarScreen extends StatelessWidget {
       key: _scaffoldKey,
       drawer: isLargeScreen ? null : _drawer(),
       body: CustomScrollView(
-        controller: scrollController,
+        controller: widget.scrollController,
         // shrinkWrap: true,
         slivers: <Widget>[
           SliverAppBar(
@@ -153,7 +160,7 @@ class CollapsibleAppBarScreen extends StatelessWidget {
             ),
           ),
           SliverToBoxAdapter(
-            child: child,
+            child: widget.child,
           ),
           SliverToBoxAdapter(
             child: FooterSection(),

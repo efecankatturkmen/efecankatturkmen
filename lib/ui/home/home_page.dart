@@ -31,7 +31,7 @@ class _LandingpageWidgetState extends State<LandingpageWidget> {
           onPressed: () {
             // Example scroll to a specific offset or you might use keys
             widget.scrollController.animateTo(
-              widget.scrollController.position.minScrollExtent,
+              widget.scrollController.position.maxScrollExtent,
               duration: Duration(milliseconds: 200),
               curve: Curves.easeInOut,
             );

@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_flip_card/flutter_flip_card.dart';
 
 class AboutWidget extends StatelessWidget {
+  AboutWidget({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;

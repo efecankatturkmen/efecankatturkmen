@@ -1,4 +1,5 @@
 import 'package:efecankatturkmen/ui/footer_section.dart';
+import 'package:efecankatturkmen/ui/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
@@ -7,9 +8,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'dart:js' as js;
 
 class CollapsibleAppBarScreen extends StatelessWidget {
-  CollapsibleAppBarScreen({Key? key, required this.child}) : super(key: key);
+  CollapsibleAppBarScreen(
+      {Key? key, required this.child, required this.scrollController})
+      : super(key: key);
   Widget child;
-
+  final ScrollController scrollController;
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -17,10 +20,39 @@ class CollapsibleAppBarScreen extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     final bool isLargeScreen = width > 800;
 
+    Widget _navBarItems() {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: _menuItems
+            .map(
+              (item) => InkWell(
+                splashColor: Colors.black,
+                focusColor: Colors.black,
+                hoverColor: Colors.black,
+                borderRadius: BorderRadius.all(Radius.circular(20)),
+                onTap: () {},
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 24.0, horizontal: 16),
+                  child: Text(
+                    item['label'],
+                    style: const TextStyle(
+                        fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            )
+            .toList(),
+      );
+    }
+
     return Scaffold(
       key: _scaffoldKey,
       drawer: isLargeScreen ? null : _drawer(),
       body: CustomScrollView(
+        controller: scrollController,
+        // shrinkWrap: true,
         slivers: <Widget>[
           SliverAppBar(
             backgroundColor: Colors.black,
@@ -148,41 +180,37 @@ class CollapsibleAppBarScreen extends StatelessWidget {
                     onTap: () {
                       _scaffoldKey.currentState?.openEndDrawer();
                     },
-                    title: Text(item),
+                    title: Text(item['label']),
                   ))
               .toList(),
         ),
       );
-
-  Widget _navBarItems() => Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: _menuItems
-            .map(
-              (item) => InkWell(
-                splashColor: Colors.black,
-                focusColor: Colors.black,
-                hoverColor: Colors.black,
-                borderRadius: BorderRadius.all(Radius.circular(20)),
-                onTap: () {},
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                      vertical: 24.0, horizontal: 16),
-                  child: Text(
-                    item,
-                    style: const TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-            )
-            .toList(),
-      );
 }
 
-final List<String> _menuItems = <String>[
-  'About',
-  'What Do I Do',
-  'Projects',
-  'Contact',
+final GlobalKey aboutKey = GlobalKey();
+final GlobalKey whatdoidoKey = GlobalKey();
+final GlobalKey prjectsKey = GlobalKey();
+final GlobalKey contactKey = GlobalKey();
+
+final List<Map<String, dynamic>> _menuItems = [
+  {
+    "key": aboutKey,
+    'name': 'about',
+    'label': 'About',
+  },
+  {
+    "key": whatdoidoKey,
+    'name': 'what_do_i_do',
+    'label': 'What Do I Do',
+  },
+  {
+    "key": prjectsKey,
+    'name': 'projects',
+    'label': 'Projects',
+  },
+  {
+    "key": contactKey,
+    'name': 'contact',
+    'label': 'Contact',
+  },
 ];

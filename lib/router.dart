@@ -9,18 +9,23 @@ class AppRouter {
   AppRouter();
   final GlobalKey<NavigatorState> _rootNavigatorKey =
       GlobalKey<NavigatorState>();
-
+  final ScrollController _scrollController = ScrollController();
   late final GoRouter appRouter =
       GoRouter(debugLogDiagnostics: true, initialLocation: "/home", routes: [
     ShellRoute(
         builder: (BuildContext context, GoRouterState state, Widget child) {
-          return CollapsibleAppBarScreen(child: child);
+          return CollapsibleAppBarScreen(
+            child: child,
+            scrollController: _scrollController,
+          );
         },
         routes: [
           GoRoute(
               path: '/home',
               builder: (BuildContext context, GoRouterState state) {
-                return LandingpageWidget();
+                return LandingpageWidget(
+                  scrollController: _scrollController,
+                );
               }),
         ]),
     ShellRoute(
@@ -31,7 +36,9 @@ class AppRouter {
           GoRoute(
               path: '/about',
               builder: (BuildContext context, GoRouterState state) {
-                return LandingpageWidget();
+                return LandingpageWidget(
+                  scrollController: _scrollController,
+                );
               }),
         ])
   ]);

@@ -32,33 +32,31 @@
 
   <title>Cankat T.</title>
   <link rel="manifest" href="manifest.json">
-
-  <script>
-    // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = null;
-  </script>
-  <!-- This script adds the flutter initialization JS code -->
-  <script src="flutter.js" defer></script>
 </head>
 
 <body>
+  <script src="flutter_bootstrap.js" async></script>
   <script>
+    { { flutter_js } }
+    { { flutter_build_config } }
     window.addEventListener('load', function (ev) {
-      // Download main.dart.js
-      _flutter.loader.loadEntrypoint({
-        serviceWorker: {
-          serviceWorkerVersion: serviceWorkerVersion,
-        },
-        onEntrypointLoaded: async function (engineInitializer) {
-          let appRunner = await engineInitializer.initializeEngine({
-            hostElement: document.querySelector("#flutter_app"),
-            // renderer: "html"
-            renderer: "canvaskit"
-          }).then(function (appRunner) {
-            return appRunner.runApp();
-          });
-        }
-      });
+   
+      const loading = document.createElement('div');
+    document.body.appendChild(loading);
+    loading.textContent = "Loading Entrypoint...";
+    _flutter.loader.load({
+      onEntrypointLoaded: async function (engineInitializer) {
+        loading.textContent = "Initializing engine...";
+        const appRunner = await engineInitializer.initializeEngine({
+          hostElement: document.querySelector("#flutter_app"),
+          // renderer: "html"
+          renderer: "canvaskit"
+        });
+
+        loading.textContent = "Running app...";
+        await appRunner.runApp();
+      }
+    });
     });
   </script>
 </body>

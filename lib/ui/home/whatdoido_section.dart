@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:js' as js;
 
 class ServiceWidget extends StatelessWidget {
+  ServiceWidget({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     // Screen dimensions

@@ -1,6 +1,7 @@
 import 'package:efecankatturkmen/ui/home/home_page.dart';
 import 'package:efecankatturkmen/ui/shell/collapableshellnav.dart';
 import 'package:efecankatturkmen/ui/shell/shellnav.dart';
+import 'package:efecankatturkmen/ui/test_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -12,6 +13,11 @@ class AppRouter {
   final ScrollController _scrollController = ScrollController();
   late final GoRouter appRouter =
       GoRouter(debugLogDiagnostics: true, initialLocation: "/home", routes: [
+    GoRoute(
+        path: '/test',
+        builder: (BuildContext context, GoRouterState state) {
+          return TestPage();
+        }),
     ShellRoute(
         builder: (BuildContext context, GoRouterState state, Widget child) {
           return CollapsibleAppBarScreen(

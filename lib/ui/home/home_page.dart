@@ -19,30 +19,27 @@ class _LandingpageWidgetState extends State<LandingpageWidget> {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     return ListView(
-      controller: widget.scrollController,
       shrinkWrap: true,
       children: [
         SizedBox(height: 50), // Replacing Divider with SizedBox for spacing
-        AboutWidget(),
-        SizedBox(height: 50),
-        ServiceWidget(),
-        SizedBox(height: 50),
-        ElevatedButton(
-          onPressed: () {
-            // Example scroll to a specific offset or you might use keys
-            widget.scrollController.animateTo(
-              widget.scrollController.position.maxScrollExtent,
-              duration: Duration(milliseconds: 200),
-              curve: Curves.easeInOut,
-            );
-          },
-          child: Text('Scroll Down'),
+        AboutWidget(
+          key: aboutKey,
         ),
-        ProjectsWidget(),
+        SizedBox(height: 50),
+        ServiceWidget(
+          key: whatdoidoKey,
+        ),
+        SizedBox(height: 50),
+
+        ProjectsWidget(
+          key: projectsKey,
+        ),
         SizedBox(height: 50),
         Container(
           width: double.infinity, // Adjusted to full width
-          child: ContactWidget(),
+          child: ContactWidget(
+            key: contactKey,
+          ),
         ),
         SizedBox(height: 50),
       ],

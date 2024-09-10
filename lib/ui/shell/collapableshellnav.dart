@@ -38,7 +38,10 @@ class _CollapsibleAppBarScreenState extends State<CollapsibleAppBarScreen> {
                 focusColor: Colors.black,
                 hoverColor: Colors.black,
                 borderRadius: BorderRadius.all(Radius.circular(20)),
-                onTap: () {},
+                onTap: () {
+                  Scrollable.ensureVisible(item['key'].currentContext!,
+                      duration: const Duration(milliseconds: 500));
+                },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                       vertical: 24.0, horizontal: 16),
@@ -185,7 +188,8 @@ class _CollapsibleAppBarScreenState extends State<CollapsibleAppBarScreen> {
           children: _menuItems
               .map((item) => ListTile(
                     onTap: () {
-                      _scaffoldKey.currentState?.openEndDrawer();
+                      Scrollable.ensureVisible(item['key'].currentContext!,
+                          duration: const Duration(milliseconds: 500));
                     },
                     title: Text(item['label']),
                   ))
@@ -196,7 +200,7 @@ class _CollapsibleAppBarScreenState extends State<CollapsibleAppBarScreen> {
 
 final GlobalKey aboutKey = GlobalKey();
 final GlobalKey whatdoidoKey = GlobalKey();
-final GlobalKey prjectsKey = GlobalKey();
+final GlobalKey projectsKey = GlobalKey();
 final GlobalKey contactKey = GlobalKey();
 
 final List<Map<String, dynamic>> _menuItems = [
@@ -211,7 +215,7 @@ final List<Map<String, dynamic>> _menuItems = [
     'label': 'What Do I Do',
   },
   {
-    "key": prjectsKey,
+    "key": projectsKey,
     'name': 'projects',
     'label': 'Projects',
   },

@@ -1,3 +1,4 @@
+import 'package:efecankatturkmen/ui/contact/contact_page.dart';
 import 'package:efecankatturkmen/ui/home/home_page.dart';
 import 'package:efecankatturkmen/ui/shell/collapableshellnav.dart';
 import 'package:efecankatturkmen/ui/shell/shellnav.dart';
@@ -45,6 +46,11 @@ class AppRouter {
                 return LandingpageWidget(
                   scrollController: _scrollController,
                 );
+              }),
+          GoRoute(
+              path: '/contact',
+              builder: (BuildContext context, GoRouterState state) {
+                return const ContactPage();
               }),
         ])
   ]);

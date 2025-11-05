@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ContactWidget extends StatelessWidget {
   ContactWidget({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    // Screen dimensions
-    final screenWidth = MediaQuery.of(context).size.width;
-    final isMobile = screenWidth < 600;
-
     return Container(
       width: 200,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        color: Colors.red,
+        color: Colors.red.withValues(alpha: 0.1),
       ),
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
       child: Column(
@@ -29,7 +26,27 @@ class ContactWidget extends StatelessWidget {
             ),
           ),
           SizedBox(height: 40),
-          ElevatedButton(onPressed: () {}, child: Text('Contact Me'))
+          ElevatedButton(
+            onPressed: () {
+              context.go('/contact');
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Color.fromRGBO(84, 142, 255, 1),
+              foregroundColor: Colors.white,
+              padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
+            ),
+            child: Text(
+              'Contact Me',
+              style: TextStyle(
+                fontFamily: 'Poppins',
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          )
         ],
       ),
     );

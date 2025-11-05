@@ -16,7 +16,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class Project {
   final String? label;
   final String? githubUrl;
-  final String? websitebUrl;
+  final String? websiteUrl;
   final String? imageUrl;
   final String? description;
   final bool? isActive;
@@ -30,7 +30,7 @@ class Project {
   Project({
     this.label,
     this.githubUrl,
-    this.websitebUrl,
+    this.websiteUrl,
     this.imageUrl,
     this.description,
     this.isActive,
@@ -51,7 +51,7 @@ class Project {
     return Project(
       label: map?['label'] ?? null,
       githubUrl: map?['githubUrl'] ?? null,
-      websitebUrl: map?['websitebUrl'] ?? null,
+      websiteUrl: map?['websiteUrl'] ?? null,
       imageUrl: map?['imageUrl'] ?? null,
       description: map?['description'] ?? null,
       isActive: map?['isActive'] ?? false,
@@ -68,7 +68,7 @@ class Project {
     );
   }
 
-  factory Project.fromMap(Map<String, dynamic> map) {
+  factory Project.fromMap(Map<String, dynamic>? map) {
     if (map == null) return Project();
 
     return Project(
@@ -79,7 +79,7 @@ class Project {
   Map<String, dynamic> toMap() => {
         'label': label,
         'githubUrl': githubUrl,
-        'websitebUrl': websitebUrl,
+        'websiteUrl': websiteUrl,
         'imageUrl': imageUrl,
         'languages': languages,
         'description': description,
@@ -91,7 +91,7 @@ class Project {
   Project copyWith({
     String? label,
     String? githubUrl,
-    String? websitebUrl,
+    String? websiteUrl,
     String? imageUrl,
     String? description,
     bool? isActive,
@@ -102,7 +102,7 @@ class Project {
     return Project(
       label: label ?? this.label,
       githubUrl: githubUrl ?? this.githubUrl,
-      websitebUrl: websitebUrl ?? this.websitebUrl,
+      websiteUrl: websiteUrl ?? this.websiteUrl,
       imageUrl: imageUrl ?? this.imageUrl,
       description: description ?? this.description,
       isActive: isActive ?? this.isActive,
@@ -114,7 +114,7 @@ class Project {
 
   @override
   String toString() {
-    return '${label.toString()}, ${githubUrl.toString()}, ${websitebUrl.toString()}, ${imageUrl.toString()}, ${description.toString()}, ${isActive.toString()}, ${start_date.toString()}, ${end_date.toString()}, ';
+    return '${label.toString()}, ${githubUrl.toString()}, ${websiteUrl.toString()}, ${imageUrl.toString()}, ${description.toString()}, ${isActive.toString()}, ${start_date.toString()}, ${end_date.toString()}, ';
   }
 
   @override

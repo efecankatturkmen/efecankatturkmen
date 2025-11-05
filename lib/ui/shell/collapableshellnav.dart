@@ -124,7 +124,7 @@ class _CollapsibleAppBarScreenState extends State<CollapsibleAppBarScreen> {
                                 IconButton(
                                     onPressed: () {
                                       js.context.callMethod('open', [
-                                        "https://www.linkedin.com/in/cankat-turkmen/"
+                                        "https://www.linkedin.com/in/efe-cankat-turkmen/"
                                       ]);
                                     },
                                     icon: Icon(FontAwesomeIcons.linkedin))

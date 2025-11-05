@@ -14,7 +14,7 @@ class ProjectsWidget extends ConsumerStatefulWidget {
 }
 
 class _ProjectsWidgetState extends ConsumerState<ProjectsWidget> {
-  final CarouselController _controller = CarouselController();
+  final CarouselSliderController  _controller = CarouselSliderController();
   int _current = 0;
   @override
   void initState() {

@@ -39,7 +39,8 @@ export const metadata: Metadata = {
   description:
     "Portfolio of Efe Cankat Türkmen — Front-End Web & Mobile Developer. Flutter, React, Firebase, and AI automations.",
   icons: {
-    icon: "/favicon.png",
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }, { url: "/favicon.png", type: "image/png" }],
+    apple: "/favicon.png",
   },
 };
 

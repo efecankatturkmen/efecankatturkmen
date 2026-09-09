@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { ArrowRight, Github, Instagram, Linkedin, Mail } from "lucide-react";
 import { useApp } from "@/lib/app-context";
 import { personalInfo } from "@/lib/content/site";
@@ -9,12 +8,6 @@ const HEART_PIXELS = Array.from({ length: 64 }, (_, i) => i);
 
 export function Hero() {
   const { theme, t } = useApp();
-  const [blink, setBlink] = useState(true);
-
-  useEffect(() => {
-    const i = setInterval(() => setBlink((b) => !b), 550);
-    return () => clearInterval(i);
-  }, []);
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -30,7 +23,9 @@ export function Hero() {
         <p className="pf-hero__greet">{t.hero.greeting}</p>
         <h1 className="pf-hero__title">
           {personalInfo.name}
-          <span className={`pf-caret ${blink ? "on" : "off"}`}>|</span>
+          <span className="pf-caret" aria-hidden>
+            |
+          </span>
         </h1>
         <p className="pf-hero__role">{t.hero.role}</p>
         <p className="pf-hero__tag">{t.hero.tagline}</p>

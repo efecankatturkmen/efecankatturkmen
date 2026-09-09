@@ -12,8 +12,8 @@ export function Footer() {
     <footer className="pf-footer">
       <div className="pf-footer__inner">
         <div className="pf-footer__brand">
-          <span className="pf-logo__mark" style={{ width: 28, height: 28, fontSize: 12 }}>
-            CT
+          <span className="pf-logo__mark" style={{ width: 34, height: 28, fontSize: 10 }}>
+            ECT
           </span>
           {personalInfo.shortName}
         </div>

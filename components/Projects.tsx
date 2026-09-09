@@ -6,7 +6,9 @@ import {
   Bot,
   ChefHat,
   Code2,
+  Dumbbell,
   ExternalLink,
+  Fish,
   GraduationCap,
   HeartPulse,
   MonitorPlay,
@@ -28,6 +30,8 @@ const iconMap: Record<string, LucideIcon> = {
   HeartPulse,
   MonitorPlay,
   Code2,
+  Dumbbell,
+  Fish,
 };
 
 const COLORS = [

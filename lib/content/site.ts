@@ -71,8 +71,8 @@ export const translations = {
     about: {
       label: "About Me",
       title: "I'm Efe Cankat Türkmen",
-      p1: "I'm an experienced member of the ITS Innovation and Enterprise Applications team at Binghamton University, specializing in technology solutions and support — from campus-wide apps like bMobi to workflows, compliance systems, and internal tools.",
-      p2: "I'm also the founder of Laplace Apps, where I ship playful, meaningful products. My latest work spans self-hosted AI, no-code automations, and mobile apps that just feel right.",
+      p1: "Lead Programmer Analyst on Binghamton University's ITS Innovation & Enterprise Applications team. I ship campus-scale products — bMobi (App Store & Play), Graphene micro-apps like ProgEval, Decker Inventory, BComply, BingSwap — and presented sustainability work at the SUNY Sustainability Conference 2024. Dual BS in Information Systems (BU + Istanbul Technical University); currently pursuing an MS in Computer Science (AI), expected May 2027.",
+      p2: "I'm also the founder of Laplace Apps, where I design and ship mobile products like Note Together, ChefBook, LOCK'D IN, and Habitank — plus self-hosted AI, n8n automations, and tools that just feel right.",
       stats: [
         { label: "Years Coding", value: "8+" },
         { label: "Shipped Projects", value: "20+" },
@@ -121,6 +121,14 @@ export const translations = {
       loading: "Loading projects…",
       empty: "No projects to show yet.",
     },
+    stack: {
+      label: "Toolkit",
+      title: "Stack",
+    },
+    beyond: {
+      label: "Life",
+      title: "Beyond work",
+    },
     contact: {
       label: "Contact",
       title: "Let's build something together",
@@ -166,8 +174,8 @@ export const translations = {
     about: {
       label: "Hakkımda",
       title: "Ben Efe Cankat Türkmen",
-      p1: "Binghamton Üniversitesi ITS Yenilik ve Kurumsal Uygulamalar ekibinin deneyimli bir üyesiyim; bMobi gibi kampüs uygulamalarından iş akışları, uyumluluk sistemleri ve dahili araçlara kadar teknoloji çözümleri ve destek konusunda uzmanlaşıyorum.",
-      p2: "Aynı zamanda Laplace Apps'in kurucusuyum; anlamlı ve eğlenceli ürünler geliştiriyorum. Son çalışmalarım self-hosted yapay zeka, no-code otomasyonlar ve doğru hissettiren mobil uygulamalar üzerine.",
+      p1: "Binghamton Üniversitesi ITS Yenilik ve Kurumsal Uygulamalar ekibinde Baş Programcı Analistim. Kampüs ölçeğinde ürünler geliştiriyorum — bMobi (App Store & Play), ProgEval gibi Graphene mikro uygulamalar, Decker Inventory, BComply, BingSwap — ve 2024 SUNY Sürdürülebilirlik Konferansı'nda sunum yaptım. Çift diploma Bilgi Sistemleri lisansım var (BU + İTÜ); şu an Yapay Zeka odaklı Bilgisayar Bilimleri yüksek lisansına devam ediyorum (beklenen mezuniyet: Mayıs 2027).",
+      p2: "Ayrıca Laplace Apps'in kurucusuyum; Note Together, ChefBook, LOCK'D IN ve Habitank gibi mobil ürünlerin yanı sıra self-hosted yapay zeka, n8n otomasyonları ve doğru hissettiren araçlar geliştiriyorum.",
       stats: [
         { label: "Yıllık Deneyim", value: "8+" },
         { label: "Yayınlanan Proje", value: "20+" },
@@ -217,6 +225,14 @@ export const translations = {
       loading: "Projeler yükleniyor…",
       empty: "Henüz gösterilecek proje yok.",
     },
+    stack: {
+      label: "Araçlar",
+      title: "Teknoloji Yığını",
+    },
+    beyond: {
+      label: "Yaşam",
+      title: "İş dışında",
+    },
     contact: {
       label: "İletişim",
       title: "Birlikte bir şeyler inşa edelim",
@@ -253,25 +269,55 @@ export const fallbackProjects: ProjectItem[] = [
     category: "Mobile",
     year: "2025",
     tagline: {
-      en: "Shared, real-time note-taking for classrooms and small teams.",
-      tr: "Sınıflar ve küçük ekipler için gerçek zamanlı ortak not tutma.",
+      en: "Collaborative shared lists — shopping, todos, events, notes and spending, together.",
+      tr: "Ortak listeler — alışveriş, yapılacaklar, etkinlikler, notlar ve harcamalar, birlikte.",
     },
     tech: ["Flutter", "Firebase", "Riverpod"],
     color: "#F59E0B",
     icon: "BookOpen",
+    websiteUrl: "https://laplaceapps.com/apps/",
   },
   {
     id: "chefbook",
-    title: "Chefbook",
+    title: "ChefBook",
     category: "Mobile",
     year: "2026",
     tagline: {
-      en: "Discover recipes and plan your week with a smart meal planner.",
-      tr: "Akıllı yemek planlayıcı ile tarifleri keşfet ve haftanı planla.",
+      en: "Your recipes, organised. Cook, save and share from one kitchen notebook.",
+      tr: "Tariflerin düzenli. Tek mutfak defterinden pişir, kaydet ve paylaş.",
     },
     tech: ["Flutter", "AI", "SQLite"],
     color: "#EF4444",
     icon: "ChefHat",
+    websiteUrl: "https://laplaceapps.com/apps/",
+  },
+  {
+    id: "lockdin",
+    title: "LOCK'D IN",
+    category: "Mobile",
+    year: "2026",
+    tagline: {
+      en: "Fitness accountability — squads, dual-shot proof check-ins, and streaks that keep you honest.",
+      tr: "Fitness hesap verebilirliği — ekipler, çift çekim kanıt check-in'leri ve seni dürüst tutan seriler.",
+    },
+    tech: ["Flutter", "Firebase", "Mobile"],
+    color: "#22C55E",
+    icon: "Dumbbell",
+    websiteUrl: "https://lockdin.laplaceapps.com/",
+  },
+  {
+    id: "habitank",
+    title: "Habitank",
+    category: "Mobile",
+    year: "2026",
+    tagline: {
+      en: "Grow calm habits. A living pixel aquarium that rewards consistency — not hustle.",
+      tr: "Sakin alışkanlıklar büyüt. Tutarlılığı ödüllendiren canlı piksel akvaryum — hustle değil.",
+    },
+    tech: ["Flutter", "Web", "Pixel"],
+    color: "#06B6D4",
+    icon: "Fish",
+    websiteUrl: "https://habitank.laplaceapps.com/",
   },
   {
     id: "bmobi",
@@ -279,10 +325,10 @@ export const fallbackProjects: ProjectItem[] = [
     category: "Mobile",
     year: "2023",
     tagline: {
-      en: "Official Binghamton University companion app for 15k+ students.",
-      tr: "15 binden fazla öğrenci için resmi Binghamton Üniversitesi uygulaması.",
+      en: "Official Binghamton University companion app — maps, biometrics, 2FA push, and campus services.",
+      tr: "Resmi Binghamton Üniversitesi uygulaması — haritalar, biyometri, 2FA push ve kampüs servisleri.",
     },
-    tech: ["Flutter", "REST", "OAuth"],
+    tech: ["Flutter", "Firebase", "Maps"],
     color: "#10B981",
     icon: "GraduationCap",
   },
@@ -305,39 +351,41 @@ export const fallbackProjects: ProjectItem[] = [
     category: "Web",
     year: "2022",
     tagline: {
-      en: "Web-based patient records and scheduling for a private clinic.",
-      tr: "Özel klinik için web tabanlı hasta kayıt ve randevu sistemi.",
+      en: "Clinic patient records, check-ups & results — QR login and role-based UI (ICS TANI / Laplace).",
+      tr: "Klinik hasta kayıtları, kontroller ve sonuçlar — QR giriş ve role dayalı arayüz (ICS TANI / Laplace).",
     },
-    tech: [".NET", "MSSQL", "Blazor"],
+    tech: ["Flutter", "Firebase", "QR"],
     color: "#3B82F6",
     icon: "HeartPulse",
+    websiteUrl: "https://icstanisonuc.com",
   },
   {
     id: "remote-ed",
     title: "Remote Ed Portal",
     category: "Web",
-    year: "2021",
+    year: "2022",
     tagline: {
-      en: "Distance learning portal built during the pandemic pivot.",
-      tr: "Pandemi döneminde geliştirilen uzaktan eğitim portalı.",
+      en: "Distance learning portal with admin tooling and auth — education.laplaceapps.com.",
+      tr: "Yönetici araçları ve kimlik doğrulamalı uzaktan eğitim portalı — education.laplaceapps.com.",
     },
-    tech: ["ASP.NET", "MySQL", "jQuery"],
+    tech: ["Flutter", "Firebase", "Auth"],
     color: "#EC4899",
     icon: "MonitorPlay",
+    websiteUrl: "https://education.laplaceapps.com/",
   },
 ];
 
 export const experience: ExperienceItem[] = [
   {
-    year: "2020 — Now",
+    year: "2021 — Now",
     role: {
       en: "Lead Programmer Analyst",
       tr: "Baş Programcı Analist",
     },
     company: "Binghamton University · ITS",
     desc: {
-      en: "Leading enterprise application initiatives, internal AI tooling, and full-stack development for a campus of 18k+ users — including bMobi, BComply, BingSwap, and research workflows.",
-      tr: "18 binden fazla kullanıcılı kampüs için kurumsal uygulama girişimleri, dahili yapay zeka araçları ve tam yığın geliştirme — bMobi, BComply, BingSwap ve araştırma iş akışları dahil.",
+      en: "Enterprise apps for 18k+ campus users: bMobi (stores, maps, biometrics, PrivacyIDEA 2FA), Graphene ProgEval, Decker Inventory, BComply, BingSwap, AuxSystem, workflows — plus search committees and SUNY Sustainability Conference 2024.",
+      tr: "18 binden fazla kampüs kullanıcısı için kurumsal uygulamalar: bMobi (mağazalar, haritalar, biyometri, PrivacyIDEA 2FA), Graphene ProgEval, Decker Inventory, BComply, BingSwap, AuxSystem, iş akışları — ayrıca arama komiteleri ve 2024 SUNY Sürdürülebilirlik Konferansı.",
     },
   },
   {
@@ -348,20 +396,62 @@ export const experience: ExperienceItem[] = [
     },
     company: "Laplace Apps",
     desc: {
-      en: "Independent product studio shipping mobile apps like Note Together and Chefbook.",
-      tr: "Note Together ve Chefbook gibi mobil uygulamalar geliştiren bağımsız ürün stüdyosu.",
+      en: "Product studio shipping Note Together, ChefBook, LOCK'D IN, Habitank, and clinic/education platforms with Flutter, Firebase, and AI automations.",
+      tr: "Note Together, ChefBook, LOCK'D IN, Habitank ve klinik/eğitim platformlarını Flutter, Firebase ve yapay zeka otomasyonlarıyla geliştiren ürün stüdyosu.",
     },
   },
   {
-    year: "2018 — 2020",
+    year: "2018 — 2021",
     role: {
       en: "Software Developer",
       tr: "Yazılım Geliştirici",
     },
-    company: "Freelance",
+    company: "ICS TANI · Atacan · Freelance",
     desc: {
-      en: "Delivered web and mobile projects for healthcare, education and small businesses.",
-      tr: "Sağlık, eğitim ve küçük işletmeler için web ve mobil projeler geliştirdim.",
+      en: "Patient management & remote education (.NET/Flutter), OSGB online training platforms, and web/mobile builds for healthcare and small business.",
+      tr: "Hasta yönetimi ve uzaktan eğitim (.NET/Flutter), OSGB çevrimiçi eğitim platformları ve sağlık / küçük işletme için web-mobil projeler.",
     },
   },
+];
+
+export interface GridItem {
+  id: string;
+  label: Localized<string>;
+}
+
+export const stackItems: GridItem[] = [
+  { id: "flutter", label: { en: "Flutter", tr: "Flutter" } },
+  { id: "dart", label: { en: "Dart", tr: "Dart" } },
+  { id: "react", label: { en: "React", tr: "React" } },
+  { id: "nextjs", label: { en: "Next.js", tr: "Next.js" } },
+  { id: "firebase", label: { en: "Firebase", tr: "Firebase" } },
+  { id: "dotnet", label: { en: ".NET / C#", tr: ".NET / C#" } },
+  { id: "javascript", label: { en: "JavaScript", tr: "JavaScript" } },
+  { id: "typescript", label: { en: "TypeScript", tr: "TypeScript" } },
+  { id: "python", label: { en: "Python", tr: "Python" } },
+  { id: "laravel", label: { en: "PHP / Laravel", tr: "PHP / Laravel" } },
+  { id: "sql", label: { en: "SQL", tr: "SQL" } },
+  { id: "nosql", label: { en: "NoSQL", tr: "NoSQL" } },
+  { id: "docker", label: { en: "Docker", tr: "Docker" } },
+  { id: "git", label: { en: "Git", tr: "Git" } },
+  { id: "graphene", label: { en: "Graphene", tr: "Graphene" } },
+  { id: "n8n", label: { en: "n8n", tr: "n8n" } },
+  { id: "htmlcss", label: { en: "HTML / CSS", tr: "HTML / CSS" } },
+  { id: "vscode", label: { en: "VS Code", tr: "VS Code" } },
+];
+
+export const beyondItems: GridItem[] = [
+  { id: "powerlifting", label: { en: "Powerlifting", tr: "Powerlifting" } },
+  { id: "calisthenics", label: { en: "Calisthenics", tr: "Kalisteni" } },
+  { id: "dance", label: { en: "Ballroom / Latin", tr: "Ballroom / Latin" } },
+  { id: "chess", label: { en: "Chess", tr: "Satranç" } },
+  { id: "basketball", label: { en: "Basketball", tr: "Basketbol" } },
+  { id: "volleyball", label: { en: "Volleyball", tr: "Voleybol" } },
+  { id: "football", label: { en: "Football", tr: "Futbol" } },
+  { id: "lol", label: { en: "League of Legends", tr: "League of Legends" } },
+  { id: "marvelrivals", label: { en: "Marvel Rivals", tr: "Marvel Rivals" } },
+  { id: "valorant", label: { en: "Valorant", tr: "Valorant" } },
+  { id: "travel", label: { en: "Travel", tr: "Seyahat" } },
+  { id: "vlogs", label: { en: "Vlogs", tr: "Vlog" } },
+  { id: "creator", label: { en: "Creator", tr: "İçerik üretici" } },
 ];

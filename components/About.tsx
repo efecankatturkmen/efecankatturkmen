@@ -3,8 +3,7 @@
 import { Briefcase } from "lucide-react";
 import { useApp } from "@/lib/app-context";
 import { experience } from "@/lib/content/site";
-
-const FACE_CELLS = Array.from({ length: 100 }, (_, i) => i);
+import { EctMarkElegant, EctMarkPixel } from "@/components/EctMarks";
 
 export function About() {
   const { theme, lang, t } = useApp();
@@ -18,22 +17,7 @@ export function About() {
 
       <div className="pf-about__grid">
         <div className="pf-about__card">
-          {theme === "pixel" ? (
-            <div className="pf-avatar-pixel" aria-hidden>
-              <div className="pf-face">
-                {FACE_CELLS.map((i) => (
-                  <span key={i} className={`fx fx-${i}`} />
-                ))}
-              </div>
-            </div>
-          ) : (
-            <div className="pf-avatar-elegant" aria-hidden>
-              <div className="pf-avatar-ring" />
-              <div className="pf-avatar-mono">
-                E<span>C</span>T
-              </div>
-            </div>
-          )}
+          {theme === "pixel" ? <EctMarkPixel /> : <EctMarkElegant />}
         </div>
 
         <div className="pf-about__text">

@@ -50,7 +50,7 @@ export function Navbar() {
           onClick={() => scrollTo("home")}
           aria-label="Home"
         >
-          <span className="pf-logo__mark">CT</span>
+          <span className="pf-logo__mark">ECT</span>
           <span className="pf-logo__text">{personalInfo.shortName}</span>
         </button>
 

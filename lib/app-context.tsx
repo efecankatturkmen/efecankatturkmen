@@ -62,7 +62,21 @@ export function AppProvider({ children }: { children: ReactNode }) {
   }, [theme, mode, lang, ready]);
 
   const toggleTheme = useCallback(
-    () => setTheme((v) => (v === "elegant" ? "pixel" : "elegant")),
+    () =>
+      setTheme((v) => {
+        switch (v) {
+          case "elegant":
+            return "pixel";
+          case "pixel":
+            return "ai";
+          case "ai":
+            return "elegant";
+          default: {
+            const _exhaustive: never = v;
+            return _exhaustive;
+          }
+        }
+      }),
     [],
   );
   const toggleMode = useCallback(

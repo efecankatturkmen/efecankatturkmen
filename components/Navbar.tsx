@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import {
+  Bot,
   Gamepad2,
   Languages,
   Menu,
@@ -11,13 +12,53 @@ import {
   X,
 } from "lucide-react";
 import { useApp } from "@/lib/app-context";
-import { personalInfo } from "@/lib/content/site";
+import { personalInfo, type ThemeStyle } from "@/lib/content/site";
 
-const SECTIONS = ["about", "what-i-do", "projects", "contact"] as const;
+const SECTIONS = [
+  "about",
+  "progression",
+  "what-i-do",
+  "projects",
+  "contact",
+] as const;
+
+const THEMES: ThemeStyle[] = ["elegant", "pixel", "ai"];
+
+function themeIcon(theme: ThemeStyle) {
+  switch (theme) {
+    case "elegant":
+      return <Sparkles size={16} />;
+    case "pixel":
+      return <Gamepad2 size={16} />;
+    case "ai":
+      return <Bot size={16} />;
+    default: {
+      const _exhaustive: never = theme;
+      return _exhaustive;
+    }
+  }
+}
+
+function themeLabel(
+  theme: ThemeStyle,
+  labels: { elegant: string; pixel: string; ai: string },
+): string {
+  switch (theme) {
+    case "elegant":
+      return labels.elegant;
+    case "pixel":
+      return labels.pixel;
+    case "ai":
+      return labels.ai;
+    default: {
+      const _exhaustive: never = theme;
+      return _exhaustive;
+    }
+  }
+}
 
 export function Navbar() {
-  const { theme, toggleTheme, mode, toggleMode, lang, toggleLang, t } =
-    useApp();
+  const { theme, setTheme, mode, toggleMode, lang, toggleLang, t } = useApp();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -36,6 +77,7 @@ export function Navbar() {
 
   const labels: Record<(typeof SECTIONS)[number], string> = {
     about: t.nav.about,
+    progression: t.nav.progression,
     "what-i-do": t.nav.whatIDo,
     projects: t.nav.projects,
     contact: t.nav.contact,
@@ -76,17 +118,23 @@ export function Navbar() {
         </nav>
 
         <div className="pf-nav__actions">
-          <button
-            type="button"
-            className="pf-iconbtn"
-            onClick={toggleTheme}
-            aria-label="Toggle theme style"
-          >
-            {theme === "elegant" ? <Gamepad2 size={16} /> : <Sparkles size={16} />}
-            <span className="pf-iconbtn__label">
-              {theme === "elegant" ? t.themeSwitch.pixel : t.themeSwitch.elegant}
-            </span>
-          </button>
+          <div className="pf-theme-group" role="group" aria-label="Theme style">
+            {THEMES.map((option) => (
+              <button
+                key={option}
+                type="button"
+                className={`pf-iconbtn ${theme === option ? "pf-iconbtn--active" : ""}`}
+                onClick={() => setTheme(option)}
+                aria-label={themeLabel(option, t.themeSwitch)}
+                aria-pressed={theme === option}
+              >
+                {themeIcon(option)}
+                <span className="pf-iconbtn__label">
+                  {themeLabel(option, t.themeSwitch)}
+                </span>
+              </button>
+            ))}
+          </div>
           <button
             type="button"
             className="pf-iconbtn"

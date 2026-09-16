@@ -6,6 +6,7 @@ import { Toaster } from "@/components/Toaster";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
+import { Progression } from "@/components/Progression";
 import { WhatIDo } from "@/components/WhatIDo";
 import { Projects } from "@/components/Projects";
 import { Stack } from "@/components/Stack";
@@ -22,6 +23,7 @@ export function HomePage() {
           <main>
             <Hero />
             <About />
+            <Progression />
             <WhatIDo />
             <Projects />
             <Stack />

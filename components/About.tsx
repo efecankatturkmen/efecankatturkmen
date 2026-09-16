@@ -1,12 +1,10 @@
 "use client";
 
-import { Briefcase } from "lucide-react";
 import { useApp } from "@/lib/app-context";
-import { experience } from "@/lib/content/site";
 import { EctMarkElegant, EctMarkPixel } from "@/components/EctMarks";
 
 export function About() {
-  const { theme, lang, t } = useApp();
+  const { theme, t } = useApp();
 
   return (
     <section id="about" className="pf-section">
@@ -29,22 +27,6 @@ export function About() {
               <div key={s.label} className="pf-stat">
                 <div className="pf-stat__value">{s.value}</div>
                 <div className="pf-stat__label">{s.label}</div>
-              </div>
-            ))}
-          </div>
-
-          <div className="pf-timeline">
-            {experience.map((e) => (
-              <div key={e.company + e.year} className="pf-timeline__item">
-                <div className="pf-timeline__dot">
-                  <Briefcase size={12} />
-                </div>
-                <div className="pf-timeline__body">
-                  <div className="pf-timeline__year">{e.year}</div>
-                  <div className="pf-timeline__role">{e.role[lang]}</div>
-                  <div className="pf-timeline__co">{e.company}</div>
-                  <p className="pf-timeline__desc">{e.desc[lang]}</p>
-                </div>
               </div>
             ))}
           </div>

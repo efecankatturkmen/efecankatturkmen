@@ -26,12 +26,6 @@ export function WhatIDo() {
             </div>
             <h3 className="pf-skill__name">{s.name}</h3>
             <p className="pf-skill__desc">{s.desc}</p>
-            <div className="pf-skill__bar">
-              <div
-                className="pf-skill__fill"
-                style={{ width: `${75 + ((i * 7) % 20)}%` }}
-              />
-            </div>
           </div>
         ))}
       </div>

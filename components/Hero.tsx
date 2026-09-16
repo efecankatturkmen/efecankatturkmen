@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Github, Instagram, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { useApp } from "@/lib/app-context";
 import { personalInfo } from "@/lib/content/site";
 
@@ -18,6 +18,8 @@ export function Hero() {
       {theme === "pixel" && <div className="pf-scanlines" aria-hidden />}
       {theme === "pixel" && <div className="pf-pixel-grid" aria-hidden />}
       {theme === "elegant" && <div className="pf-elegant-glow" aria-hidden />}
+      {theme === "ai" && <div className="pf-ai-grid" aria-hidden />}
+      {theme === "ai" && <div className="pf-ai-scan" aria-hidden />}
 
       <div className="pf-hero__inner">
         <p className="pf-hero__greet">{t.hero.greeting}</p>
@@ -65,14 +67,6 @@ export function Hero() {
             aria-label="LinkedIn"
           >
             <Linkedin size={20} />
-          </a>
-          <a
-            href={personalInfo.socials.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-          >
-            <Instagram size={20} />
           </a>
           <a href={personalInfo.socials.email} aria-label="Email">
             <Mail size={20} />

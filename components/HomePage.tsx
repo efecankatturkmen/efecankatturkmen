@@ -24,8 +24,8 @@ export function HomePage() {
             <Hero />
             <About />
             <Progression />
-            <WhatIDo />
             <Projects />
+            <WhatIDo />
             <Stack />
             <BeyondWork />
             <Contact />

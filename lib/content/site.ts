@@ -28,6 +28,7 @@ export interface ProjectItem {
   githubUrl?: string;
   websiteUrl?: string;
   imageUrl?: string;
+  status?: "shipped" | "in_progress";
 }
 
 export type SkillRarity =
@@ -97,15 +98,17 @@ export const translations = {
     nav: {
       about: "About",
       progression: "Progression",
-      whatIDo: "What I Do",
-      projects: "Projects",
+      whatIDo: "Capabilities",
+      projects: "Work",
+      toolkit: "Toolkit",
       contact: "Contact",
       resume: "Resume",
     },
     hero: {
       greeting: "Hi, I'm",
-      role: "Front-End Web & Mobile Developer",
-      tagline: "I build delightful digital experiences that people love to use.",
+      role: "Software Engineer & Product Builder",
+      tagline:
+        "I build mobile apps, enterprise systems, and AI-powered products from idea to production.",
       cta1: "View Projects",
       cta2: "Get in Touch",
       pressStart: "Press Start",
@@ -122,34 +125,24 @@ export const translations = {
       ],
     },
     whatIDo: {
-      label: "What I Do",
-      title: "Specializing In",
-      subtitle:
-        "A tiny arsenal of tools I use every day to turn ideas into pixels and pixels into products.",
+      label: "Capabilities",
+      title: "What I can build",
       skills: [
         {
-          name: "Flutter",
-          desc: "Cross-platform mobile apps with buttery smooth 60fps UI.",
+          name: "Product Engineering",
+          desc: "Cross-platform mobile, web, backend systems, and product architecture from idea to production.",
         },
         {
-          name: "React",
-          desc: "Modern component-driven web apps with delightful UX.",
+          name: "AI & Automation",
+          desc: "AI-assisted development, agent workflows, RAG, MCP, workflow automation, generative media, and local/self-hosted AI.",
         },
         {
-          name: ".NET / C#",
-          desc: "Enterprise back-ends and internal tools that scale.",
+          name: "Enterprise Systems",
+          desc: "Internal platforms, workflows, integrations, authentication, databases, and production applications.",
         },
         {
-          name: "Firebase",
-          desc: "Realtime data, auth, and cloud functions in a snap.",
-        },
-        {
-          name: "UI / UX Design",
-          desc: "Material Design 3, motion, and thoughtful micro-interactions.",
-        },
-        {
-          name: "AI Integrations",
-          desc: "Company AI in any form — embedded assistants, RAG knowledge bases, n8n workflows, voice agents, MCP tool servers, product chat/triage/scheduling, creative media pipelines, and Cursor-driven delivery.",
+          name: "Product & UI/UX",
+          desc: "Interface design, interaction design, prototyping, design systems, and polished product experiences.",
         },
       ],
     },
@@ -176,7 +169,9 @@ export const translations = {
     },
     stack: {
       label: "Toolkit",
-      title: "Stack",
+      title: "Tools I build with.",
+      subtitle:
+        "Technologies, platforms, and tools I use to turn ideas into products.",
       rarityLegend: "Rarity legend",
       rarity: {
         experienced: "Experienced",
@@ -222,16 +217,17 @@ export const translations = {
     nav: {
       about: "Hakkımda",
       progression: "İlerleme",
-      whatIDo: "Ne Yapıyorum",
-      projects: "Projeler",
+      whatIDo: "Yetenekler",
+      projects: "Çalışmalar",
+      toolkit: "Araçlar",
       contact: "İletişim",
       resume: "Özgeçmiş",
     },
     hero: {
       greeting: "Merhaba, ben",
-      role: "Ön Uç Web & Mobil Geliştirici",
+      role: "Yazılım Mühendisi ve Ürün Geliştirici",
       tagline:
-        "İnsanların kullanmayı sevdiği keyifli dijital deneyimler tasarlıyorum.",
+        "Mobil uygulamalar, kurumsal sistemler ve yapay zeka destekli ürünleri fikirden üretime kadar geliştiriyorum.",
       cta1: "Projeleri Gör",
       cta2: "İletişime Geç",
       pressStart: "Start'a Bas",
@@ -248,34 +244,24 @@ export const translations = {
       ],
     },
     whatIDo: {
-      label: "Ne Yapıyorum",
-      title: "Uzmanlık Alanlarım",
-      subtitle:
-        "Fikirleri piksellere, pikselleri ürünlere dönüştürmek için her gün kullandığım küçük bir cephanelik.",
+      label: "Yetenekler",
+      title: "Ne inşa edebilirim",
       skills: [
         {
-          name: "Flutter",
-          desc: "60fps akıcı arayüzlü çapraz platform mobil uygulamalar.",
+          name: "Ürün Mühendisliği",
+          desc: "Çapraz platform mobil, web, arka uç sistemleri ve ürün mimarisi — fikirden üretime.",
         },
         {
-          name: "React",
-          desc: "Bileşen tabanlı, keyifli kullanıcı deneyimli modern web uygulamaları.",
+          name: "YZ ve Otomasyon",
+          desc: "YZ destekli geliştirme, ajan iş akışları, RAG, MCP, iş akışı otomasyonu, üretken medya ve yerel/self-hosted yapay zeka.",
         },
         {
-          name: ".NET / C#",
-          desc: "Ölçeklenebilir kurumsal arka uçlar ve dahili araçlar.",
+          name: "Kurumsal Sistemler",
+          desc: "Dahili platformlar, iş akışları, entegrasyonlar, kimlik doğrulama, veritabanları ve üretim uygulamaları.",
         },
         {
-          name: "Firebase",
-          desc: "Gerçek zamanlı veri, kimlik doğrulama ve bulut fonksiyonları.",
-        },
-        {
-          name: "UI / UX Tasarım",
-          desc: "Material Design 3, hareket ve düşünceli mikro etkileşimler.",
-        },
-        {
-          name: "AI Entegrasyonları",
-          desc: "Şirketlere her formda yapay zeka — gömülü asistanlar, RAG bilgi tabanları, n8n iş akışları, ses ajanları, MCP araç sunucuları, ürün sohbet/triage/zamanlama, yaratıcı medya hatları ve Cursor ile hızlı teslimat.",
+          name: "Ürün ve UI/UX",
+          desc: "Arayüz tasarımı, etkileşim tasarımı, prototipleme, tasarım sistemleri ve cilalı ürün deneyimleri.",
         },
       ],
     },
@@ -303,7 +289,9 @@ export const translations = {
     },
     stack: {
       label: "Araçlar",
-      title: "Teknoloji Yığını",
+      title: "Ürünleri bunlarla inşa ediyorum.",
+      subtitle:
+        "Fikirleri ürünlere dönüştürmek için kullandığım teknolojiler, platformlar ve araçlar.",
       rarityLegend: "Nadirlik efsanesi",
       rarity: {
         experienced: "Deneyimli",
@@ -997,198 +985,84 @@ export interface GridItem {
 
 export const stackCategories: StackCategory[] = [
   {
-    id: "frontend",
-    title: { en: "Mobile / Frontend", tr: "Mobil / Ön Uç" },
+    id: "mobile-frontend",
+    title: { en: "Mobile & Frontend", tr: "Mobil ve Ön Uç" },
     iconId: "flutter",
     skills: [
-      {
-        id: "flutter",
-        label: { en: "Flutter", tr: "Flutter" },
-        rarity: "experienced",
-      },
-      {
-        id: "dart",
-        label: { en: "Dart", tr: "Dart" },
-        rarity: "experienced",
-      },
-      {
-        id: "react",
-        label: { en: "React", tr: "React" },
-        rarity: "experienced",
-      },
-      {
-        id: "nextjs",
-        label: { en: "Next.js", tr: "Next.js" },
-        rarity: "comfortable",
-      },
-      {
-        id: "javascript",
-        label: { en: "JavaScript", tr: "JavaScript" },
-        rarity: "comfortable",
-      },
-      {
-        id: "typescript",
-        label: { en: "TypeScript", tr: "TypeScript" },
-        rarity: "comfortable",
-      },
-      {
-        id: "htmlcss",
-        label: { en: "HTML / CSS", tr: "HTML / CSS" },
-        rarity: "experienced",
-      },
+      { id: "flutter", label: { en: "Flutter", tr: "Flutter" }, rarity: "experienced" },
+      { id: "dart", label: { en: "Dart", tr: "Dart" }, rarity: "experienced" },
+      { id: "react", label: { en: "React", tr: "React" }, rarity: "experienced" },
+      { id: "nextjs", label: { en: "Next.js", tr: "Next.js" }, rarity: "comfortable" },
+      { id: "javascript", label: { en: "JavaScript", tr: "JavaScript" }, rarity: "comfortable" },
+      { id: "typescript", label: { en: "TypeScript", tr: "TypeScript" }, rarity: "comfortable" },
+      { id: "htmlcss", label: { en: "HTML / CSS", tr: "HTML / CSS" }, rarity: "experienced" },
     ],
   },
   {
     id: "backend",
-    title: { en: "Backend / Web", tr: "Arka Uç / Web" },
+    title: { en: "Backend & APIs", tr: "Arka Uç ve API'ler" },
     iconId: "dotnet",
     skills: [
-      {
-        id: "dotnet",
-        label: { en: ".NET / C#", tr: ".NET / C#" },
-        rarity: "experienced",
-      },
-      {
-        id: "laravel",
-        label: { en: "PHP / Laravel", tr: "PHP / Laravel" },
-        rarity: "familiar",
-      },
-      {
-        id: "graphene",
-        label: { en: "Graphene", tr: "Graphene" },
-        rarity: "comfortable",
-      },
+      { id: "dotnet", label: { en: ".NET / C#", tr: ".NET / C#" }, rarity: "experienced" },
+      { id: "laravel", label: { en: "PHP / Laravel", tr: "PHP / Laravel" }, rarity: "familiar" },
+      { id: "graphene", label: { en: "Graphene", tr: "Graphene" }, rarity: "comfortable" },
     ],
   },
   {
     id: "data-cloud",
-    title: { en: "Data / Cloud", tr: "Veri / Bulut" },
+    title: { en: "Data & Cloud", tr: "Veri ve Bulut" },
     iconId: "firebase",
     skills: [
-      {
-        id: "firebase",
-        label: { en: "Firebase", tr: "Firebase" },
-        rarity: "experienced",
-      },
-      {
-        id: "sql",
-        label: { en: "SQL", tr: "SQL" },
-        rarity: "comfortable",
-      },
-      {
-        id: "nosql",
-        label: { en: "NoSQL", tr: "NoSQL" },
-        rarity: "comfortable",
-      },
-      {
-        id: "docker",
-        label: { en: "Docker", tr: "Docker" },
-        rarity: "comfortable",
-      },
+      { id: "firebase", label: { en: "Firebase", tr: "Firebase" }, rarity: "experienced" },
+      { id: "sql", label: { en: "SQL", tr: "SQL" }, rarity: "comfortable" },
+      { id: "nosql", label: { en: "NoSQL", tr: "NoSQL" }, rarity: "comfortable" },
+      { id: "docker", label: { en: "Docker", tr: "Docker" }, rarity: "comfortable" },
     ],
   },
   {
-    id: "ai",
-    title: { en: "AI / Tools", tr: "YZ / Araçlar" },
+    id: "ai-engineering",
+    title: { en: "AI Engineering & Automation", tr: "YZ Mühendisliği ve Otomasyon" },
     iconId: "n8n",
     skills: [
-      {
-        id: "chatgpt",
-        label: { en: "ChatGPT", tr: "ChatGPT" },
-        rarity: "experienced",
-      },
-      {
-        id: "chatgpt-schedules",
-        label: { en: "ChatGPT Schedules", tr: "ChatGPT Schedules" },
-        rarity: "comfortable",
-      },
-      {
-        id: "claude",
-        label: { en: "Claude", tr: "Claude" },
-        rarity: "comfortable",
-      },
-      {
-        id: "gemini",
-        label: { en: "Gemini", tr: "Gemini" },
-        rarity: "comfortable",
-      },
-      {
-        id: "grok",
-        label: { en: "Grok", tr: "Grok" },
-        rarity: "comfortable",
-      },
-      {
-        id: "cursor",
-        label: { en: "Cursor", tr: "Cursor" },
-        rarity: "experienced",
-      },
-      {
-        id: "cursor-automations",
-        label: { en: "Cursor Automations", tr: "Cursor Automations" },
-        rarity: "comfortable",
-      },
-      {
-        id: "elevenlabs",
-        label: { en: "ElevenLabs", tr: "ElevenLabs" },
-        rarity: "comfortable",
-      },
-      {
-        id: "google-stitch",
-        label: { en: "Google Stitch", tr: "Google Stitch" },
-        rarity: "familiar",
-      },
-      {
-        id: "google-flow",
-        label: { en: "Google Flow", tr: "Google Flow" },
-        rarity: "familiar",
-      },
-      {
-        id: "google-flow-music",
-        label: { en: "Google Flow Music", tr: "Google Flow Music" },
-        rarity: "familiar",
-      },
-      {
-        id: "meshy",
-        label: { en: "Meshy AI", tr: "Meshy AI" },
-        rarity: "familiar",
-      },
-      {
-        id: "workspace-studio",
-        label: { en: "Google Workspace Studio", tr: "Google Workspace Studio" },
-        rarity: "comfortable",
-      },
-      {
-        id: "n8n",
-        label: { en: "n8n", tr: "n8n" },
-        rarity: "comfortable",
-      },
-      {
-        id: "python",
-        label: { en: "Python", tr: "Python" },
-        rarity: "learning",
-      },
-      {
-        id: "laplace-mcp",
-        label: { en: "Laplace MCP", tr: "Laplace MCP" },
-        rarity: "learning",
-      },
+      { id: "python", label: { en: "Python", tr: "Python" }, rarity: "learning" },
+      { id: "rag", label: { en: "RAG", tr: "RAG" }, rarity: "comfortable" },
+      { id: "mcp", label: { en: "Model Context Protocol (MCP)", tr: "Model Context Protocol (MCP)" }, rarity: "learning" },
+      { id: "agent-workflows", label: { en: "Agent Workflows", tr: "Ajan İş Akışları" }, rarity: "comfortable" },
+      { id: "n8n", label: { en: "n8n", tr: "n8n" }, rarity: "comfortable" },
+      { id: "cursor-automations", label: { en: "Cursor Automations", tr: "Cursor Otomasyonları" }, rarity: "comfortable" },
     ],
   },
   {
-    id: "tools",
-    title: { en: "Dev Tools", tr: "Geliştirme Araçları" },
+    id: "ai-models",
+    title: { en: "AI Models & Assistants", tr: "YZ Modelleri ve Asistanlar" },
+    iconId: "python",
+    skills: [
+      { id: "chatgpt", label: { en: "ChatGPT", tr: "ChatGPT" }, rarity: "experienced" },
+      { id: "claude", label: { en: "Claude", tr: "Claude" }, rarity: "comfortable" },
+      { id: "gemini", label: { en: "Gemini", tr: "Gemini" }, rarity: "comfortable" },
+      { id: "grok", label: { en: "Grok", tr: "Grok" }, rarity: "comfortable" },
+      { id: "cursor", label: { en: "Cursor", tr: "Cursor" }, rarity: "experienced" },
+    ],
+  },
+  {
+    id: "generative",
+    title: { en: "Generative & Creative AI", tr: "Üretken ve Yaratıcı YZ" },
+    iconId: "meshy",
+    skills: [
+      { id: "elevenlabs", label: { en: "ElevenLabs", tr: "ElevenLabs" }, rarity: "comfortable" },
+      { id: "google-flow", label: { en: "Google Flow", tr: "Google Flow" }, rarity: "familiar" },
+      { id: "google-stitch", label: { en: "Google Stitch", tr: "Google Stitch" }, rarity: "familiar" },
+      { id: "google-flow-music", label: { en: "Google Flow Music", tr: "Google Flow Music" }, rarity: "familiar" },
+      { id: "meshy", label: { en: "Meshy AI", tr: "Meshy AI" }, rarity: "familiar" },
+    ],
+  },
+  {
+    id: "development",
+    title: { en: "Development", tr: "Geliştirme" },
     iconId: "git",
     skills: [
-      {
-        id: "git",
-        label: { en: "Git", tr: "Git" },
-        rarity: "experienced",
-      },
-      {
-        id: "vscode",
-        label: { en: "VS Code", tr: "VS Code" },
-        rarity: "experienced",
-      },
+      { id: "git", label: { en: "Git", tr: "Git" }, rarity: "experienced" },
+      { id: "vscode", label: { en: "VS Code", tr: "VS Code" }, rarity: "experienced" },
     ],
   },
 ];

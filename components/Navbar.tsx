@@ -16,9 +16,9 @@ import { personalInfo, type ThemeStyle } from "@/lib/content/site";
 
 const SECTIONS = [
   "about",
-  "progression",
-  "what-i-do",
   "projects",
+  "capabilities",
+  "toolkit",
   "contact",
 ] as const;
 
@@ -77,9 +77,9 @@ export function Navbar() {
 
   const labels: Record<(typeof SECTIONS)[number], string> = {
     about: t.nav.about,
-    progression: t.nav.progression,
-    "what-i-do": t.nav.whatIDo,
     projects: t.nav.projects,
+    capabilities: t.nav.whatIDo,
+    toolkit: t.nav.toolkit,
     contact: t.nav.contact,
   };
 

@@ -958,7 +958,7 @@ button { font: inherit; }
 /* -------- Skills -------- */
 .pf-skills {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 .pf-skill {
@@ -973,28 +973,20 @@ button { font: inherit; }
 .pf-skill:hover { transform: translateY(-6px); border-color: var(--pf-accent); }
 [data-theme="pixel"] .pf-skill:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--pf-border); }
 @keyframes pf-fadein { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
-.pf-skill__icon {
-  width: 46px; height: 46px;
-  display: inline-flex; align-items: center; justify-content: center;
-  background: color-mix(in oklab, var(--pf-accent) 15%, transparent);
+.pf-skill__index {
+  font-family: var(--pf-font-display);
+  font-size: 13px;
+  letter-spacing: 0.14em;
   color: var(--pf-accent);
-  border-radius: 12px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
-[data-theme="pixel"] .pf-skill__icon { border-radius: 0; box-shadow: 2px 2px 0 var(--pf-border); }
+[data-theme="pixel"] .pf-skill__index { font-size: 16px; letter-spacing: 0.08em; }
 .pf-skill__name { font-family: var(--pf-font-display); font-size: 22px; margin: 0 0 8px; color: var(--pf-fg); }
 [data-theme="pixel"] .pf-skill__name { font-size: 14px; }
 .pf-skill__desc { color: var(--pf-fg-dim); font-size: 14px; line-height: 1.6; margin: 0; }
 [data-theme="pixel"] .pf-skill__desc { font-size: 17px; }
 
-.pf-skill__icon svg {
-  display: block;
-}
-[data-theme="pixel"] .pf-skill__icon svg {
-  image-rendering: pixelated;
-}
-
-/* -------- Icon grids (Stack / Beyond work) -------- */
+/* -------- Stack cards -------- */
 .pf-rarity-legend {
   display: flex;
   flex-wrap: wrap;
@@ -1031,18 +1023,50 @@ button { font: inherit; }
   border-width: 2px;
   font-size: 12px;
 }
-.pf-rarity--experienced {
-  color: var(--pf-accent);
+.pf-rarity--experienced,
+.pf-sketch.pf-rarity--experienced { color: var(--pf-accent); }
+.pf-rarity--comfortable,
+.pf-sketch.pf-rarity--comfortable { color: var(--pf-success, #4ade80); }
+.pf-rarity--familiar,
+.pf-sketch.pf-rarity--familiar { color: var(--pf-warn, #fbbf24); }
+.pf-rarity--learning,
+.pf-sketch.pf-rarity--learning { color: var(--pf-accent-3, #a78bfa); }
+
+.pf-sketch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 12px 8px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1;
 }
-.pf-rarity--comfortable {
-  color: var(--pf-success, #4ade80);
+.pf-sketch__text { position: relative; z-index: 1; }
+.pf-sketch__c {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  overflow: visible;
+  pointer-events: none;
 }
-.pf-rarity--familiar {
-  color: var(--pf-warn, #fbbf24);
+.pf-sketch__c--tl { top: 0; left: 0; }
+.pf-sketch__c--tr { top: 0; right: 0; transform: scaleX(-1); }
+.pf-sketch__c--bl { bottom: 0; left: 0; transform: scaleY(-1); }
+.pf-sketch__c--br { right: 0; bottom: 0; transform: scale(-1, -1); }
+.pf-sketch__edge {
+  position: absolute;
+  background: currentColor;
+  pointer-events: none;
+  opacity: 0.95;
 }
-.pf-rarity--learning {
-  color: var(--pf-accent-3, #a78bfa);
-}
+.pf-sketch__edge--top { top: 6px; left: 14px; right: 14px; height: 1px; }
+.pf-sketch__edge--bottom { bottom: 6px; left: 14px; right: 14px; height: 1px; }
+.pf-sketch__edge--left { left: 6px; top: 14px; bottom: 14px; width: 1px; }
+.pf-sketch__edge--right { right: 6px; top: 14px; bottom: 14px; width: 1px; }
+
 .pf-stack-cats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

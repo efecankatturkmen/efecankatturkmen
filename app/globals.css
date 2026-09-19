@@ -873,6 +873,73 @@ button { font: inherit; }
   line-height: 1.5;
 }
 [data-theme="pixel"] .pf-mission__projects span { font-size: 16px; }
+.pf-mission__courses {
+  margin-top: 16px;
+}
+.pf-mission__courses ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.pf-mission__courses li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 12px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--pf-border);
+}
+.pf-mission__courses li:last-of-type {
+  border-bottom: none;
+}
+.pf-mission__courses strong {
+  color: var(--pf-accent);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  min-width: 5.5rem;
+}
+.pf-mission__courses span {
+  color: var(--pf-muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+[data-theme="pixel"] .pf-mission__courses span { font-size: 16px; }
+.pf-mission__degree-done {
+  margin-top: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--pf-success, #4ade80);
+}
+.pf-mission__load-more {
+  margin-top: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--pf-border);
+  color: var(--pf-accent);
+  font: inherit;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  border-radius: calc(var(--pf-radius) * 0.7);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+.pf-mission__load-more:hover {
+  border-color: var(--pf-accent);
+  background: color-mix(in oklab, var(--pf-accent) 10%, transparent);
+}
+[data-theme="pixel"] .pf-mission__load-more {
+  border-radius: 0;
+  border-width: 2px;
+}
 .pf-mission__here {
   margin-top: 14px;
   display: inline-flex;

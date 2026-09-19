@@ -1,6 +1,5 @@
 "use client";
 
-import { Briefcase } from "lucide-react";
 import { useApp } from "@/lib/app-context";
 import { milestones } from "@/lib/content/site";
 import { MissionTimeline } from "@/components/MissionTimeline";
@@ -15,11 +14,7 @@ export function Progression() {
         <h2 className="pf-section__title">{t.progression.title}</h2>
       </div>
 
-      <MissionTimeline
-        items={milestones}
-        youAreHereId="bu-its"
-        dotIcon={<Briefcase size={12} />}
-      />
+      <MissionTimeline items={milestones} youAreHereId="bu-its" />
     </section>
   );
 }

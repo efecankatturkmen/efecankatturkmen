@@ -51,9 +51,16 @@ export interface StackCategory {
 
 export type MilestoneStatus = "cleared" | "in_progress" | "upcoming";
 
+export type MilestoneIcon = "briefcase" | "school";
+
 export interface MilestoneProject {
   name: string;
   detail: Localized<string>;
+}
+
+export interface MilestoneCourse {
+  code: string;
+  title: string;
 }
 
 export interface MilestoneItem {
@@ -65,6 +72,9 @@ export interface MilestoneItem {
   year: string;
   summary: Localized<string>;
   projects: MilestoneProject[];
+  courses?: MilestoneCourse[];
+  degreeCompletedNote?: Localized<string>;
+  icon?: MilestoneIcon;
 }
 
 /** @deprecated Use milestones — kept type alias for clarity during migration */
@@ -161,6 +171,8 @@ export const translations = {
       upcoming: "Upcoming",
       youAreHere: "You are here",
       projectsHeading: "Projects & highlights",
+      classesHeading: "Classes",
+      loadMore: "Load 5 more",
     },
     stack: {
       label: "Toolkit",
@@ -286,6 +298,8 @@ export const translations = {
       upcoming: "Yakında",
       youAreHere: "Buradasın",
       projectsHeading: "Projeler & öne çıkanlar",
+      classesHeading: "Dersler",
+      loadMore: "5 tane daha yükle",
     },
     stack: {
       label: "Araçlar",
@@ -465,17 +479,318 @@ export const milestones: MilestoneItem[] = [
     },
     projects: [
       {
-        name: "bMobi",
+        name: "Watson AD User Group Creation by IAMbing",
         detail: {
-          en: "Campus companion app — stores, maps, biometrics, PrivacyIDEA 2FA.",
-          tr: "Kampüs uygulaması — mağazalar, haritalar, biyometri, PrivacyIDEA 2FA.",
+          en: "Ongoing · Project 4779",
+          tr: "Devam ediyor · Proje 4779",
         },
       },
       {
-        name: "Graphene suite",
+        name: "Mobile Friendly Campus Maps / Floorplans for UPD",
         detail: {
-          en: "ProgEval, Decker Inventory, BComply, BingSwap, AuxSystem & workflows.",
-          tr: "ProgEval, Decker Inventory, BComply, BingSwap, AuxSystem ve iş akışları.",
+          en: "UAT · Project 12769",
+          tr: "UAT · Proje 12769",
+        },
+      },
+      {
+        name: "New Dataproxy 2.0",
+        detail: {
+          en: "Staging · Project 14817",
+          tr: "Staging · Proje 14817",
+        },
+      },
+      {
+        name: "Workflow Engine Updates",
+        detail: {
+          en: "Ongoing · Project 14816",
+          tr: "Devam ediyor · Proje 14816",
+        },
+      },
+      {
+        name: "my.Binghamton & bMobi Title II Review/Compliance",
+        detail: {
+          en: "Ongoing · Project 12400",
+          tr: "Devam ediyor · Proje 12400",
+        },
+      },
+      {
+        name: "Comprehensive Binghamton HR System",
+        detail: {
+          en: "Ongoing · Project 5834",
+          tr: "Devam ediyor · Proje 5834",
+        },
+      },
+      {
+        name: "Dataproxy and Graphene Server Updates",
+        detail: {
+          en: "Ongoing · Project 12471",
+          tr: "Devam ediyor · Proje 12471",
+        },
+      },
+      {
+        name: "Python/Django DataProxy",
+        detail: {
+          en: "Ongoing · Project 10955",
+          tr: "Devam ediyor · Proje 10955",
+        },
+      },
+      {
+        name: "Semester Withdrawal Form",
+        detail: {
+          en: "In progress · Project 2314",
+          tr: "Devam ediyor · Proje 2314",
+        },
+      },
+      {
+        name: "4+1 Program Workflow",
+        detail: {
+          en: "In progress · DMND0003836",
+          tr: "Devam ediyor · DMND0003836",
+        },
+      },
+      {
+        name: "DataProxy → Hermes APIGateway",
+        detail: {
+          en: "In progress · translating DataProxy modules to Hermes APIGateway",
+          tr: "Devam ediyor · DataProxy modüllerinin Hermes APIGateway'e taşınması",
+        },
+      },
+      {
+        name: "Contracts Workflow Rework",
+        detail: {
+          en: "Complete · Project 3807",
+          tr: "Tamamlandı · Proje 3807",
+        },
+      },
+      {
+        name: "IAM Updates — Add Only Sync",
+        detail: {
+          en: "Complete · Project 12774",
+          tr: "Tamamlandı · Proje 12774",
+        },
+      },
+      {
+        name: "Competency Project Phase II",
+        detail: {
+          en: "Complete · Project 8290",
+          tr: "Tamamlandı · Proje 8290",
+        },
+      },
+      {
+        name: "Research Foundation Human Resources E-Form",
+        detail: {
+          en: "Complete · Project 4496",
+          tr: "Tamamlandı · Proje 4496",
+        },
+      },
+      {
+        name: "Food Policy Exemption Request Portal",
+        detail: {
+          en: "Complete · Project 11695",
+          tr: "Tamamlandı · Proje 11695",
+        },
+      },
+      {
+        name: "Harpur Student/Internal/Faculty Workflows",
+        detail: {
+          en: "Complete · Project 10132",
+          tr: "Tamamlandı · Proje 10132",
+        },
+      },
+      {
+        name: "Brightspace Staff Integration",
+        detail: {
+          en: "Complete · Project 5148",
+          tr: "Tamamlandı · Proje 5148",
+        },
+      },
+      {
+        name: "ETS Print Queue",
+        detail: {
+          en: "Complete · Project 5400",
+          tr: "Tamamlandı · Proje 5400",
+        },
+      },
+      {
+        name: "Sustainable Waste Tracking Sheets",
+        detail: {
+          en: "Complete · Project 4362",
+          tr: "Tamamlandı · Proje 4362",
+        },
+      },
+      {
+        name: "Counsel Office Online E-Form",
+        detail: {
+          en: "Complete · Project 6733",
+          tr: "Tamamlandı · Proje 6733",
+        },
+      },
+      {
+        name: "Career Resource Google Drive",
+        detail: {
+          en: "Complete · Project 9685",
+          tr: "Tamamlandı · Proje 9685",
+        },
+      },
+      {
+        name: "bMobi",
+        detail: {
+          en: "Complete · Project 1845 — App Store, auth, PrivacyIDEA 2FA, Phase III",
+          tr: "Tamamlandı · Proje 1845 — mağaza, kimlik doğrulama, PrivacyIDEA 2FA, Faz III",
+        },
+      },
+      {
+        name: "ID Card Photo Upload Fix",
+        detail: {
+          en: "Complete · Project 5262",
+          tr: "Tamamlandı · Proje 5262",
+        },
+      },
+      {
+        name: "Recycling and Contamination Dashboard",
+        detail: {
+          en: "Complete · Project 7352",
+          tr: "Tamamlandı · Proje 7352",
+        },
+      },
+      {
+        name: "Sustainability Dorm Competition Dashboard",
+        detail: {
+          en: "Complete · Project 7705",
+          tr: "Tamamlandı · Proje 7705",
+        },
+      },
+      {
+        name: "QR Code for Inoperable Automatic Doors",
+        detail: {
+          en: "Complete · Project 2847",
+          tr: "Tamamlandı · Proje 2847",
+        },
+      },
+      {
+        name: "Performance Program and Evaluation System",
+        detail: {
+          en: "Complete · Project 502",
+          tr: "Tamamlandı · Proje 502",
+        },
+      },
+      {
+        name: "Graduate Late Add/Drop/Withdrawal Workflow",
+        detail: {
+          en: "Complete · Project 497",
+          tr: "Tamamlandı · Proje 497",
+        },
+      },
+      {
+        name: "Purchasing Contract Workflow",
+        detail: {
+          en: "Complete · Project 504",
+          tr: "Tamamlandı · Proje 504",
+        },
+      },
+      {
+        name: "RF Phase II E-Forms (Human Resources)",
+        detail: {
+          en: "Complete · Project 513",
+          tr: "Tamamlandı · Proje 513",
+        },
+      },
+      {
+        name: "ORCID / Identity Management",
+        detail: {
+          en: "Complete · Project 1434",
+          tr: "Tamamlandı · Proje 1434",
+        },
+      },
+      {
+        name: "Distinguished Professors",
+        detail: {
+          en: "Complete · Project 2659",
+          tr: "Tamamlandı · Proje 2659",
+        },
+      },
+      {
+        name: "Guest and Visitor Workflow",
+        detail: {
+          en: "Complete · Project 2691",
+          tr: "Tamamlandı · Proje 2691",
+        },
+      },
+      {
+        name: "RF Workflow Implementation Phase IV",
+        detail: {
+          en: "Complete · Project 2756",
+          tr: "Tamamlandı · Proje 2756",
+        },
+      },
+      {
+        name: "Clinic Supply Inventory Management System",
+        detail: {
+          en: "Complete · PRJ0038812",
+          tr: "Tamamlandı · PRJ0038812",
+        },
+      },
+      {
+        name: "UCTD Training Software Scheduler",
+        detail: {
+          en: "Complete · PRJ0038809",
+          tr: "Tamamlandı · PRJ0038809",
+        },
+      },
+      {
+        name: "bComply ID Card Swipe for PF Staff",
+        detail: {
+          en: "Complete · DMND0003897",
+          tr: "Tamamlandı · DMND0003897",
+        },
+      },
+      {
+        name: "UTS Tutor Sign-in for Brightsign",
+        detail: {
+          en: "Complete · DMND0003884",
+          tr: "Tamamlandı · DMND0003884",
+        },
+      },
+      {
+        name: "Watson College Events Calendar",
+        detail: {
+          en: "Complete · PRJ0036881",
+          tr: "Tamamlandı · PRJ0036881",
+        },
+      },
+      {
+        name: "Faculty Reporting Phase II",
+        detail: {
+          en: "Complete · Project 498",
+          tr: "Tamamlandı · Proje 498",
+        },
+      },
+      {
+        name: "Generic Course Syllabus Tool",
+        detail: {
+          en: "Complete · PRJ0036883",
+          tr: "Tamamlandı · PRJ0036883",
+        },
+      },
+      {
+        name: "Outside Scholarship Form — Student Athletes",
+        detail: {
+          en: "Complete · DMND0003857",
+          tr: "Tamamlandı · DMND0003857",
+        },
+      },
+      {
+        name: "Athletic Agreement Workflow",
+        detail: {
+          en: "Complete · DMND0003858",
+          tr: "Tamamlandı · DMND0003858",
+        },
+      },
+      {
+        name: "Sabbatical and Title F Leave",
+        detail: {
+          en: "Complete · DMND0003870",
+          tr: "Tamamlandı · DMND0003870",
         },
       },
     ],
@@ -550,6 +865,43 @@ export const milestones: MilestoneItem[] = [
     ],
   },
   {
+    id: "edu-ms",
+    levelLabel: { en: "Education · current", tr: "Eğitim · güncel" },
+    status: "in_progress",
+    title: {
+      en: "M.S. Computer Science (AI)",
+      tr: "Bilgisayar Bilimleri Yüksek Lisansı (YZ)",
+    },
+    company: "Binghamton University",
+    year: "Expected May 2027",
+    icon: "school",
+    summary: {
+      en: "Graduate study focused on artificial intelligence — deepening theory and applied AI for products and campus systems.",
+      tr: "Yapay zeka odaklı yüksek lisans — ürünler ve kampüs sistemleri için teori ve uygulamalı YZ'yi derinleştirme.",
+    },
+    projects: [
+      {
+        name: "AI concentration",
+        detail: {
+          en: "Coursework and projects toward an AI-focused CS master's.",
+          tr: "YZ odaklı bilgisayar bilimleri yüksek lisansı için dersler ve projeler.",
+        },
+      },
+    ],
+    courses: [
+      { code: "CS 571", title: "Programming Languages" },
+      { code: "CS 552", title: "Intro to Cloud Computing" },
+      { code: "CS 515", title: "Social Media Data Sci Pipeline" },
+      { code: "CS 575", title: "Design & Analysis Comp Algorit" },
+      { code: "CS 565", title: "Intro to Artificial Intelligen" },
+      { code: "CS 536", title: "Intro to Machine Learning" },
+      { code: "CS 580P", title: "Natural Language Processing" },
+      { code: "CS 551", title: "Systems Programming" },
+      { code: "CS 559", title: "Science of Cyber Security" },
+      { code: "CS 595", title: "Termination Project" },
+    ],
+  },
+  {
     id: "edu-bs",
     levelLabel: { en: "Education · cleared", tr: "Eğitim · tamamlandı" },
     status: "cleared",
@@ -559,6 +911,7 @@ export const milestones: MilestoneItem[] = [
     },
     company: "Binghamton University · Istanbul Technical University",
     year: "Completed",
+    icon: "school",
     summary: {
       en: "Dual bachelor's in Information Systems across Binghamton University and Istanbul Technical University — systems, software, and enterprise foundations.",
       tr: "Binghamton Üniversitesi ve İstanbul Teknik Üniversitesi'nde Bilgi Sistemleri çift lisans — sistemler, yazılım ve kurumsal temeller.",
@@ -579,31 +932,59 @@ export const milestones: MilestoneItem[] = [
         },
       },
     ],
-  },
-  {
-    id: "edu-ms",
-    levelLabel: { en: "Education · current", tr: "Eğitim · güncel" },
-    status: "in_progress",
-    title: {
-      en: "M.S. Computer Science (AI)",
-      tr: "Bilgisayar Bilimleri Yüksek Lisansı (YZ)",
-    },
-    company: "Binghamton University",
-    year: "Expected May 2027",
-    summary: {
-      en: "Graduate study focused on artificial intelligence — deepening theory and applied AI for products and campus systems.",
-      tr: "Yapay zeka odaklı yüksek lisans — ürünler ve kampüs sistemleri için teori ve uygulamalı YZ'yi derinleştirme.",
-    },
-    projects: [
-      {
-        name: "AI concentration",
-        detail: {
-          en: "Coursework and projects toward an AI-focused CS master's.",
-          tr: "YZ odaklı bilgisayar bilimleri yüksek lisansı için dersler ve projeler.",
-        },
-      },
+    courses: [
+      { code: "CS 110", title: "Programming Concepts & Applic" },
+      { code: "FREE XXX", title: "Orientation" },
+      { code: "LART XXX", title: "Liberal Arts" },
+      { code: "MATH 224", title: "Differential Calculus" },
+      { code: "MATH 225", title: "Integral Calculus" },
+      { code: "MATH 304", title: "Linear Algebra" },
+      { code: "PHYS 131", title: "Physics I" },
+      { code: "CS 2XX", title: "Programming I" },
+      { code: "HIST XXX", title: "Introduction to World Affairs" },
+      { code: "LART XXX", title: "Liberal Art" },
+      { code: "MATH 314", title: "Discrete Math" },
+      { code: "PHYS 132", title: "Physics II" },
+      { code: "MATH 226", title: "Integration Technique & Applicat" },
+      { code: "MATH 227", title: "Infinite Series" },
+      { code: "CS 345", title: "SW Engineering" },
+      { code: "CS 350", title: "Operating Systems" },
+      { code: "CS 375", title: "Analysis of Algorithms" },
+      { code: "CS 3XX", title: "Artificial Intelligence" },
+      { code: "HIST 100", title: "Turkish Revolution I" },
+      { code: "MATH 300", title: "Numerical Methods" },
+      { code: "CS 3XX", title: "Multimedia Systems" },
+      { code: "CS 428", title: "Computer Networks" },
+      { code: "CS 432", title: "Database" },
+      { code: "HIST 200", title: "Turkish Revolution II" },
+      { code: "MIS 323", title: "IT Sys Analysis" },
+      { code: "PHIL 3XX", title: "Information Ethics" },
+      { code: "CS 3XX", title: "Intro to Comp & Info Security" },
+      { code: "CS 120", title: "Computer Systems I: Machine Org" },
+      { code: "CS 140", title: "Programming with Objects (LEC)" },
+      { code: "MIS 311", title: "Information Syst & Application" },
+      { code: "OPM 311", title: "Operations Management" },
+      { code: "WRIT 111", title: "Research & Writing (Rhetorically)" },
+      { code: "CS 220", title: "Comp Sys II: Arch & Prog (LEC)" },
+      { code: "CS 240", title: "Data Struct & Algorithms" },
+      { code: "HWS 215", title: "Wellness Thru Weight Training" },
+      { code: "MATH 327", title: "Probability with Stat Methods" },
+      { code: "CS 342", title: "Program Design Patterns" },
+      { code: "CS 402", title: "Software & Eng. Project Mgmt" },
+      { code: "CS 435", title: "Introduction To Data Mining" },
+      { code: "CS 485", title: "Info Systems Senior Proj I" },
+      { code: "ARTS 210", title: "Graphic Design I" },
+      { code: "CS 426", title: "Internet of Things" },
+      { code: "CS 427", title: "Mobile Systems Security" },
+      { code: "CS 444", title: "Programming for the Web" },
+      { code: "CS 486", title: "Info Systems Senior Proj II" },
+      { code: "GEOG 212", title: "Historical Geography (LEC)" },
     ],
-  },
+    degreeCompletedNote: {
+      en: "Degree completed · May 30, 2021",
+      tr: "Diploma tamamlandı · 30 Mayıs 2021",
+    },
+  }
 ];
 
 /** @deprecated Prefer milestones */
